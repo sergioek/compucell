@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  height: 100vh;
+  grid-template-areas: "header"
+                        "main"
+                        "footer";
+                
+}
+
+@import "./Header.scss";
+@import "./Navbar.scss";
+@import "./CartWidget.scss";
+@import "./Main.scss";
+@import "./ItemListContainer.scss";
+

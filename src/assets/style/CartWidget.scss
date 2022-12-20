@@ -1,0 +1,15 @@
+.iconCart{
+    display: flex;
+    color: white;
+    font-size: 2rem;
+    padding-right: 2rem;
+    span{
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+}
+
+.iconCart:hover{
+    color: white;
+    background-color: #FF5733;
+}

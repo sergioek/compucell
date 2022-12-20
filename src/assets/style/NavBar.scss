@@ -1,0 +1,13 @@
+.nav{
+    display: flex;
+    gap: 50px;
+    
+    .link{
+        font-family: 'Finger Paint', cursive;
+        
+    }
+    .link:hover{
+        background-color:#FF5733;
+        border-radius: 5px;
+    }
+}   

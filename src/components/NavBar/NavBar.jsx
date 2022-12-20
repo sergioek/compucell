@@ -1,0 +1,35 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
+import { CartWidget } from '../CartWidget/CartWidget';
+
+
+export const NavBar = () => {
+   return(
+    
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky" >
+    
+    <Container fluid>
+      <Navbar.Brand >
+        <Image src="../src\assets\img\logo-compucell.png" responsive width="120px"/>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarScroll" />
+      <Navbar.Collapse id="navbarScroll" >
+        <Nav
+          className="me-auto my-2 my-lg-0 nav"
+          style={{ maxHeight: '100px'}}
+          navbarScroll
+        >
+          <Nav.Link href="" className="text-white link">Home</Nav.Link>
+          <Nav.Link href="" className="text-white link">Productos</Nav.Link>
+          <Nav.Link href="" className="text-white link">Contacto</Nav.Link>
+          <Nav.Link href="" className="text-white link">Legales</Nav.Link>
+        </Nav>
+       <CartWidget/>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+   )
+}
