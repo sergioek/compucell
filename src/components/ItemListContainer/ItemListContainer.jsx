@@ -1,7 +1,9 @@
-export const ItemListContainer = (props) => {
+import { ItemCount } from "../ItemCount/ItemCount"
+export const ItemListContainer = ({greeting}) => {
   return (
     <div className="itemListContainer">
-        {props.greeting}
+        {greeting}
+        <ItemCount/>
     </div>
   )
 }

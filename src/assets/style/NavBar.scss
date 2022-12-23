@@ -1,13 +1,21 @@
 .nav{
     display: flex;
+    flex-wrap: nowrap;
     gap: 50px;
     
     .link{
-        font-family: 'Finger Paint', cursive;
+        font-family: $finger;
         
     }
     .link:hover{
-        background-color:#FF5733;
+        background-color:$orange;
         border-radius: 5px;
     }
 }   
+
+@media (max-width: 500px) {
+    .nav{
+        gap: 5px;
+    }
+  
+}

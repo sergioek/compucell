@@ -1,0 +1,22 @@
+.socialMedia{
+    .socialMedia-items{
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+        align-items: center;
+
+        li{
+            a{
+                font-size: 2rem;
+                color: $white;
+            }
+
+            a:hover{
+                color: $orange;
+                cursor:hand ;
+            }
+        }
+        
+    }
+}
