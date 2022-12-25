@@ -5,6 +5,9 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { Footer } from "./components/Footer/Footer"
 import { SocialMedia } from "./components/SocialMedia/SocialMedia"
 import { Developer } from "./components/Developer/Developer"
+import { Home } from "./components/Home/Home"
+import { ItemList } from "./components/ItemList/ItemList"
+import { Item } from "./components/Item/Item"
 
 function App() {
   return (
@@ -14,7 +17,9 @@ function App() {
         </Header>
               
         <Main>
-            <ItemListContainer greeting="Bienvenidos a compucell, la tienda de venta de productos tecno." />
+          {/* <Home/> */}
+          <ItemList/>
+           
         </Main>
 
         <Footer>

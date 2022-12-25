@@ -1,0 +1,43 @@
+.item{
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $gray-ligth;
+    align-items: center;
+    border-radius: 10px;
+    img{
+        width: 13.5rem;
+        margin-top: 1rem;
+    }
+    .item__text{
+        display: flex;
+        flex-direction: column;
+        h3{
+            font-family: $josefin;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: $gray;
+            margin:1rem 0rem 1rem 0rem;
+        } 
+        strong{
+            font-family: $roboto;
+            font-size: 2rem;
+            color: $black;
+        }
+        button{
+            width: 13.5rem;
+            height:2rem;
+            border: none;
+            background-color: $yellow;
+            font-family: $roboto;
+            font-size: 1rem;
+            font-weight: bold;
+            margin:1rem 0rem 1rem 0rem;
+        }
+        button:hover{
+            background-color: $green;
+
+        }
+    }
+
+}
