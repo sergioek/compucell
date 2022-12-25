@@ -1,6 +1,29 @@
+.titleList{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    background-color: $green;
+    color: $white;
+}
+
 .itemList{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr) );
     gap: 2rem;
     justify-items: center;
+}
+
+.icono {
+    padding-left: 10px!important;
+}
+
+.icono-input {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    color: $black;
+}
+
+.search{
+    padding-left: 30px;
 }

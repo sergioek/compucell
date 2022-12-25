@@ -12,12 +12,13 @@
     .item__text{
         display: flex;
         flex-direction: column;
-        h3{
+        align-items: center;
+        h5{
             font-family: $josefin;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: $gray;
-            margin:1rem 0rem 1rem 0rem;
+            margin:1rem 1rem 1rem 1rem;
         } 
         strong{
             font-family: $roboto;
@@ -32,12 +33,17 @@
             font-family: $roboto;
             font-size: 1rem;
             font-weight: bold;
-            margin:1rem 0rem 1rem 0rem;
+            margin-bottom: 0.5rem;
+            visibility: hidden;
         }
-        button:hover{
-            background-color: $green;
 
-        }
     }
 
+}
+
+.item:hover{
+    scale: (1.2);
+    button{
+        visibility: visible;
+    }
 }
