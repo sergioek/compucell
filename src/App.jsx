@@ -17,9 +17,10 @@ function App() {
         </Header>
               
         <Main>
-          {/* <Home/> */}
-          <ItemList/>
-           
+          <ItemListContainer>
+             <ItemList/>
+          </ItemListContainer>
+         
         </Main>
 
         <Footer>

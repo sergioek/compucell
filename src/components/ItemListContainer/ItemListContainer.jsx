@@ -1,9 +1,8 @@
-import { ItemCount } from "../ItemCount/ItemCount"
-export const ItemListContainer = ({greeting}) => {
+
+export const ItemListContainer = ({children}) => {
   return (
     <div className="itemListContainer">
-        {greeting}
-        <ItemCount/>
+        {children}
     </div>
   )
 }

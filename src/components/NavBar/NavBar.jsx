@@ -5,7 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import { CartWidget } from '../CartWidget/CartWidget';
 
-
 export const NavBar = () => {
    return(
     
@@ -22,9 +21,12 @@ export const NavBar = () => {
           style={{ maxHeight: '500px'}}
           navbarScroll
         >
-          <Nav.Link href="" className="text-white link">Home</Nav.Link>
-          <Nav.Link href="" className="text-white link">Productos</Nav.Link>
-          <Nav.Link href="" className="text-white link">Contacto</Nav.Link>
+          <Nav.Link href="" className="link">Home</Nav.Link>
+
+          <Nav.Link href="" className="link">Productos</Nav.Link>
+
+          <Nav.Link href="" className="link">Contacto</Nav.Link>
+
         </Nav>
        <CartWidget/>
       </Navbar.Collapse>
