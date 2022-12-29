@@ -8,6 +8,7 @@ import { Developer } from "./components/Developer/Developer"
 import { Home } from "./components/Home/Home"
 import { ItemList } from "./components/ItemList/ItemList"
 import { Item } from "./components/Item/Item"
+import { ItemDetailsContainer } from "./components/ItemDetailsContainer/ItemDetailsContainer"
 
 function App() {
   return (
@@ -17,10 +18,10 @@ function App() {
         </Header>
               
         <Main>
-          <ItemListContainer>
+          {/* <ItemListContainer>
              <ItemList/>
-          </ItemListContainer>
-         
+          </ItemListContainer> */}
+          <ItemDetailsContainer/>
         </Main>
 
         <Footer>

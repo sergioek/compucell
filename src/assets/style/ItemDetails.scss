@@ -1,0 +1,115 @@
+.itemDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    .itemDetails__image{
+        img{
+            width: 100%;
+            height: auto;
+        };
+        img:hover{
+           zoom: 2;
+           cursor: -webkit-zoom-in;
+        }
+    }
+
+    .itemDetails__details{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        .text{
+           display: flex;
+           flex-direction: column;
+           width: 80%;
+            h2{
+                font-size: 2rem;
+                font-family: $roboto;
+            }
+            p{
+                margin-top: 2rem;
+                font-size: 0.8rem;
+                text-align: justify;
+                font-family: $josefin;
+                font-weight: bold;
+                color: $gray;
+            }
+            strong{
+                font-size: 2rem;
+                font-family: $roboto;
+            }
+        }
+        .options{
+            .addToCart{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                .itemCountToCart{
+                   display: flex;
+                   gap: 1rem;
+                   button{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    border-radius: 1.125rem;
+                    background-color: $yellow;
+                    color: $black;
+                    border: none;
+                   }
+                   input{
+                    text-align: center;
+                    width: 5rem;
+                   }
+                }
+
+                .buttonAddToCart{
+                    button{
+                        height: 2.5rem;
+                        width: 10rem; 
+                        background-color: $green-hard;
+                        color: $white;
+                        border: none;
+                        margin-left: 1.5rem;
+                    }
+                    button:hover{
+                        background-color: white;
+                        color: $green-hard;
+                        border: 1px solid $green-hard;
+                    }
+                    
+                }
+                
+            }
+        
+            .buy{
+                margin-top: 2rem;
+                text-align: start;
+                h6{
+                    font-size: 1.3rem;
+                   font-style: oblique;
+                    color: $black;
+                    font-family: $roboto;
+                }
+                img{
+                    width: 70%;
+                    height: auto;
+                }
+            }
+        }
+        
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .itemDetails{
+        grid-template-columns: 1fr;
+        
+    }
+  
+}
