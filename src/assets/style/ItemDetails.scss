@@ -11,16 +11,13 @@
             height: auto;
         };
         img:hover{
-           zoom: 2;
-           cursor: -webkit-zoom-in;
+           scale: 2;
+           cursor: zoom-in;
         }
     }
 
     .itemDetails__details{
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        
+        @include flex(column,center,center,2rem);
         .text{
            display: flex;
            flex-direction: column;
@@ -28,11 +25,13 @@
             h2{
                 font-size: 2rem;
                 font-family: $roboto;
+                color: $orange;
             }
             p{
-                margin-top: 2rem;
+                margin-top: 1rem;
                 font-size: 0.8rem;
                 text-align: justify;
+                line-height: 1.5rem;
                 font-family: $josefin;
                 font-weight: bold;
                 color: $gray;
@@ -44,28 +43,8 @@
         }
         .options{
             .addToCart{
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                .itemCountToCart{
-                   display: flex;
-                   gap: 1rem;
-                   button{
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    font-size: 1rem;
-                    font-weight: bold;
-                    border-radius: 1.125rem;
-                    background-color: $yellow;
-                    color: $black;
-                    border: none;
-                   }
-                   input{
-                    text-align: center;
-                    width: 5rem;
-                   }
-                }
-
+                @include flex(column,center,center,2rem);
+               
                 .buttonAddToCart{
                     button{
                         height: 2.5rem;
@@ -73,7 +52,6 @@
                         background-color: $green-hard;
                         color: $white;
                         border: none;
-                        margin-left: 1.5rem;
                     }
                     button:hover{
                         background-color: white;
@@ -87,10 +65,10 @@
         
             .buy{
                 margin-top: 2rem;
-                text-align: start;
+                text-align: center;
                 h6{
                     font-size: 1.3rem;
-                   font-style: oblique;
+                    font-style: oblique;
                     color: $black;
                     font-family: $roboto;
                 }

@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+@mixin flex($direction,$justify-content,$align-items,$gap){
+  display:flex;
+  flex-direction:$direction;
+  justify-content:$justify-content;
+  align-items:$align-items;
+  gap:$gap;
+}
+
 body{
   display: grid;
   grid-template-areas: "header"
@@ -24,6 +32,9 @@ body{
 @import "./Developer.scss";
 @import "./Home.scss";
 @import "./ItemList.scss";
+@import "Categories.scss";
 @import "./Item.scss";
 @import "./SearchProducts.scss";
-@import "./ItemDetails.scss"
+@import "./ItemDetails.scss";
+@import "./ItemCount.scss";
+@import "./Contacts.scss";

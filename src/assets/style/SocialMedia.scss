@@ -1,11 +1,9 @@
 .socialMedia{
     .socialMedia-items{
         list-style: none;
-        display: flex;
-        justify-content: space-evenly;
+        @include flex(row,space-evenly,center,0rem);
         padding-top: 1rem;
-        align-items: center;
-
+      
         li{
             a{
                 font-size: 2rem;

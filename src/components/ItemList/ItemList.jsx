@@ -4,6 +4,7 @@ import { Item } from '../Item/Item'
 import { SearchProducts } from '../SearchProducts/SearchProducts'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Categories } from '../Categories/Categories';
 
 
 export const ItemList = () => {
@@ -54,6 +55,8 @@ export const ItemList = () => {
       <div className='titleList'>
         <h2>Nuestros productos</h2>
       </div>
+
+      <Categories/>
 
       <SearchProducts functionSearch={searchProduct}/>
       < ToastContainer /> 

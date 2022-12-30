@@ -1,4 +1,5 @@
 import React from 'react'
+import { ItemCount } from '../ItemCount/ItemCount'
 
 export const ItemDetails = () => {
   return (
@@ -16,12 +17,8 @@ export const ItemDetails = () => {
 
                 <div className='options'>
                     <div className='addToCart'>
-                        <div className='itemCountToCart'>
-                            <button>+</button>
-                            <input type="number" name="" id="" disabled min='0' value={1}/>
-                            <button>-</button>
-                        </div>
-                   
+                        <ItemCount/>
+                        
                         <div className='buttonAddToCart'>
                             <button className='bi bi-cart'> Agregar al carrito</button>
                         </div>

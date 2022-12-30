@@ -1,18 +1,14 @@
 .item{
     width: 15rem;
-    display: flex;
-    flex-direction: column;
+    @include flex(column,center,center,0rem);
     background-color: $gray-ligth;
-    align-items: center;
     border-radius: 10px;
     img{
         width: 13.5rem;
         margin-top: 1rem;
     }
     .item__text{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(column,center,center,0rem);
         h5{
             font-family: $josefin;
             font-weight: bold;
@@ -46,4 +42,15 @@
     button{
         visibility: visible;
     }
+}
+
+@media (max-width:900px){
+    .item{
+        .item__text{
+            button{
+                visibility: visible;
+            }
+        }  
+    }
+    
 }

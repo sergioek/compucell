@@ -18,10 +18,10 @@ function App() {
         </Header>
               
         <Main>
-          {/* <ItemListContainer>
+          <ItemListContainer>
              <ItemList/>
-          </ItemListContainer> */}
-          <ItemDetailsContainer/>
+          </ItemListContainer>
+          {/* <ItemDetailsContainer/> */}
         </Main>
 
         <Footer>
