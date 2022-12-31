@@ -1,0 +1,43 @@
+.shop{
+    @include flex(column,center,center,3rem);
+    .shop__info{
+        h2{
+            color: $orange;
+            font-family: $pacifico;
+            font-size: 3rem;
+        }
+        p{
+            color:$black;
+            font-family: $josefin;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        iframe{
+            width: 90vw;
+            margin: 2rem;
+        }
+    }
+
+    .shop__contact{
+      
+        @include flex(column,center,center,1rem);
+        background-color:$yellow;
+        h3{
+            color: $black;
+            font-size: 2rem;
+            font-family: $roboto;
+        }
+
+        &__links{
+            width: 100%;
+            margin: 1rem;
+            @include flex(row,space-evenly,center,0rem);
+            a{
+                font-family: $josefin;
+                font-size: 1.5rem;
+                color: $black;
+            }
+        }
+
+    }
+}

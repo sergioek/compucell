@@ -1,5 +1,5 @@
 .filter{
-    @include flex(column,center,center,1rem);
+    @include flex(column,center,center,0rem);
     background-color: $gray;
     margin: 2rem;
     border-radius: 1rem;
@@ -12,7 +12,8 @@
     }
     nav{
         ul{
-            @include flex(row,center,center,2rem);
+            @include flex(row,center,center,1.5rem);
+            flex-wrap: wrap;
             li{
                 list-style: none;
                 padding: 0.5rem;
@@ -27,8 +28,3 @@
     }
 }
 
-@media (max-width:900px){
-    .filter{
-        display: none;
-    }
-}

@@ -55,9 +55,9 @@ export const ItemList = () => {
       <div className='titleList'>
         <h2>Nuestros productos</h2>
       </div>
-
+      
       <Categories/>
-
+      
       <SearchProducts functionSearch={searchProduct}/>
       < ToastContainer /> 
       <div className='itemList'>

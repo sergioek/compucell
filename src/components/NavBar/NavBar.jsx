@@ -12,7 +12,7 @@ export const NavBar = () => {
     
     <Container fluid>
       <Navbar.Brand >
-        <Image src="./public/img/logo-compucell.png"  width="120px"/>
+        <Image src="./public/img/logoCompucellFDZ.png"  width="140px"/>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll" >
