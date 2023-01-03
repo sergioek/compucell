@@ -1,18 +1,20 @@
-.itemCountToCart{
+.itemCountToCart {
     display: flex;
     gap: 1rem;
-    button{
-     width: 2.5rem;
-     height: 2.5rem;
-     font-size: 1rem;
-     font-weight: bold;
-     border-radius: 1.125rem;
-     background-color: $yellow;
-     color: $black;
-     border: none;
+
+    button {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 1.125rem;
+        background-color: $yellow;
+        color: $black;
+        border: none;
     }
-    input{
-     text-align: center;
-     width: 5rem;
+
+    input {
+        text-align: center;
+        width: 5rem;
     }
- }
+}

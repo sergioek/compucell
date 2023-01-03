@@ -1,26 +1,27 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-@mixin flex($direction,$justify-content,$align-items,$gap){
-  display:flex;
-  flex-direction:$direction;
-  justify-content:$justify-content;
-  align-items:$align-items;
-  gap:$gap;
+@mixin flex($direction, $justify-content, $align-items, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
 }
 
-body{
+body {
   display: grid;
   grid-template-areas: "header"
-                        "main"
-                        "footer";
+    "main"
+    "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 20vh 80vh auto;
-                
+
 }
+
 @import "./Vars.scss";
 @import "./Header.scss";
 @import "./Navbar.scss";

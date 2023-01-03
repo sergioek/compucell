@@ -1,8 +1,3 @@
-export const Main = ({children}) => {
-    return (
-        <main className="main">
-            {children}
-        </main>
-    );
+export const Main = ({ children }) => {
+  return <main className="main">{children}</main>;
 };
-

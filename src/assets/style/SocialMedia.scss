@@ -1,20 +1,19 @@
-.socialMedia{
-    .socialMedia-items{
+.socialMedia {
+    .socialMedia-items {
         list-style: none;
-        @include flex(row,space-evenly,center,0rem);
+        @include flex(row, space-evenly, center, 0rem);
         padding-top: 1rem;
-      
-        li{
-            a{
+
+        li {
+            a {
                 font-size: 2rem;
                 color: $white;
             }
 
-            a:hover{
+            a:hover {
                 color: $orange;
-                cursor:hand ;
+                cursor: hand;
             }
         }
-        
     }
 }

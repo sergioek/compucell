@@ -1,33 +1,40 @@
-.itemDetails{
+.itemDetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     justify-items: center;
     align-items: center;
     width: 100%;
-    .itemDetails__image{
-        img{
+
+    .itemDetails__image {
+        img {
             width: 100%;
             height: auto;
-        };
-        img:hover{
-           scale: 2;
-           cursor: zoom-in;
+        }
+
+        ;
+
+        img:hover {
+            scale: 2;
+            cursor: zoom-in;
         }
     }
 
-    .itemDetails__details{
-        @include flex(column,center,center,2rem);
-        .text{
-           display: flex;
-           flex-direction: column;
-           width: 80%;
-            h2{
+    .itemDetails__details {
+        @include flex(column, center, center, 2rem);
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+
+            h2 {
                 font-size: 2rem;
                 font-family: $roboto;
                 color: $orange;
             }
-            p{
+
+            p {
                 margin-top: 1rem;
                 font-size: 0.8rem;
                 text-align: justify;
@@ -36,58 +43,63 @@
                 font-weight: bold;
                 color: $gray;
             }
-            strong{
+
+            strong {
                 font-size: 2rem;
                 font-family: $roboto;
             }
         }
-        .options{
-            .addToCart{
-                @include flex(column,center,center,2rem);
-               
-                .buttonAddToCart{
-                    button{
+
+        .options {
+            .addToCart {
+                @include flex(column, center, center, 2rem);
+
+                .buttonAddToCart {
+                    button {
                         height: 2.5rem;
-                        width: 10rem; 
+                        width: 10rem;
                         background-color: $green-hard;
                         color: $white;
                         border: none;
                     }
-                    button:hover{
+
+                    button:hover {
                         background-color: white;
                         color: $green-hard;
                         border: 1px solid $green-hard;
                     }
-                    
+
                 }
-                
+
             }
-        
-            .buy{
+
+            .buy {
                 margin-top: 2rem;
                 text-align: center;
-                h6{
+
+                h6 {
                     font-size: 1.3rem;
                     font-style: oblique;
                     color: $black;
                     font-family: $roboto;
                 }
-                img{
+
+                img {
                     width: 70%;
                     height: auto;
                 }
             }
         }
-        
+
     }
 
 
 }
 
 @media (max-width: 500px) {
-    .itemDetails{
+    .itemDetails {
         grid-template-columns: 1fr;
-        
+
     }
-  
+
 }

@@ -1,22 +1,21 @@
-.nav{
+.nav {
     display: flex;
     flex-wrap: nowrap;
     gap: 50px;
-    
-    .link{
+
+    .link {
         font-family: $finger;
         color: $white;
-        
     }
-    .link:hover{
-        background-color:$orange;
+
+    .link:hover {
+        background-color: $orange;
         border-radius: 5px;
     }
-}   
+}
 
 @media (max-width: 500px) {
-    .nav{
+    .nav {
         gap: 5px;
     }
-  
 }
