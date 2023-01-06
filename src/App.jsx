@@ -10,27 +10,41 @@ import { ItemList } from "./components/ItemList/ItemList";
 import { Item } from "./components/Item/Item";
 import { ItemDetailsContainer } from "./components/ItemDetailsContainer/ItemDetailsContainer";
 import { Contacts } from "./components/Contacts/Contacts";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Header>
-        <NavBar />
-      </Header>
+      <BrowserRouter>
+        <Header>
+          <NavBar />
+        </Header>
 
-      <Main>
-        <ItemListContainer>
-             <ItemList/>
-          </ItemListContainer>
-       
+        <Main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/productos" element={<ItemListContainer />} />
+            <Route
+              path="/productos/:categoryId"
+              element={<ItemListContainer />}
+            />
 
-        {/* <Contacts /> */}
-      </Main>
+            <Route
+              path="/producto/:id"
+              element={<ItemDetailsContainer/>}
+            />
 
-      <Footer>
-        <SocialMedia />
-        <Developer />
-      </Footer>
+            <Route path="/contacto" element={<Contacts />} />
+
+            <Route path="*" element={<Navigate to={"/"} />} />
+          </Routes>
+        </Main>
+
+        <Footer>
+          <SocialMedia />
+          <Developer />
+        </Footer>
+      </BrowserRouter>
     </div>
   );
 }

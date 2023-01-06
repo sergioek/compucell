@@ -8,9 +8,8 @@
         color: $white;
     }
 
-    .link:hover {
-        background-color: $orange;
-        border-radius: 5px;
+    .activeLink{
+        color: $orange;
     }
 }
 

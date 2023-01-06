@@ -1,25 +1,23 @@
 import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 
-export const ItemDetails = () => {
+export const ItemDetails = ({id,category,name,description,price,stock,image, mark,model }) => {
   return (
     <section className="itemDetails">
       <article className="itemDetails__image">
-        <img src="../../../public/img/products/mouse-genius.jfif" alt="" />
+        <img srcSet={"../../../public/img/products/" + image} alt={name} />
       </article>
 
       <article className="itemDetails__details">
         <div className="text">
-          <h2>Microprocesador AMD RYZEN 5600X</h2>
-          <p>
-            MICROPROCESADOR AMD RYZEN 5 5600X AM4 SIN VIDEO. CON COOLER -
-            CARACTERÍSTICAS GENERALES ART 100-100000065BOX MARCA AMD MODELO
-            100-100000065BOX TÉCNICAS GARANTÍA 3 AÑOS CANTIDAD DE NÚCLEOS 6
-            NÚCLEOS / 12 THREADS ZÓCALO AM4 CACHÉ 36 MB VELOCIDAD DE RELOJ 4.5
-            GHZ TECNOLOGÍA DE MEMORIA DDR4 SEGMENTO DE PRODUCTO GAMING VER MÁS
-            VER MENOS
-          </p>
-          <strong>$100,00</strong>
+          <h2>{name + " " + mark + " " + model}</h2>
+          <p>{description}</p>
+          <strong>
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(price)}
+          </strong>
         </div>
 
         <div className="options">
@@ -33,7 +31,7 @@ export const ItemDetails = () => {
 
           <div className="buy">
             <h6>Medios de Pago:</h6>
-            <img src="../../../public/img/mediosPago.png" alt="" srcset="" />
+            <img srcSet="../../../public/img/mediosPago.png" alt="" />
           </div>
         </div>
       </article>

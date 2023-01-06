@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "category": "Teclados",
+        "category": "teclados",
         "name": "Teclado",
         "mark": "Genius",
         "model": "G245",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "category": "Teclados",
+        "category": "teclados",
         "name": "Teclado",
         "mark": "Only",
         "model": "Ol452",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "category": "Teclados",
+        "category": "teclados",
         "name": "Teclado",
         "mark": "Microsoft",
         "model": "Mla487",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "category": "Mouse",
+        "category": "mouse",
         "name": "Mouse",
         "mark": "Genius",
         "model": "G4879",
@@ -45,7 +45,7 @@
     },
     {
         "id": 5,
-        "category": "Mouse",
+        "category": "mouse",
         "name": "Mouse",
         "mark": "Redragon",
         "model": "RJ423",
@@ -56,7 +56,7 @@
     },
     {
         "id": 6,
-        "category": "Mouse",
+        "category":"mouse",
         "name": "Mouse",
         "mark": "Only",
         "model": "Ol8302",
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "category": "Mouse",
+        "category": "mouse",
         "name": "Mouse",
         "mark": "Microsoft",
         "model": "M892",
@@ -78,7 +78,7 @@
     },
     {
         "id": 8,
-        "category": "Parlantes",
+        "category": "parlantes",
         "name": "Parlante",
         "mark": "Genius",
         "model": "G4890",
@@ -89,7 +89,7 @@
     },
     {
         "id": 9,
-        "category": "Parlantes",
+        "category": "parlantes",
         "name": "Parlante",
         "mark": "JBL",
         "model": "JBL587",
@@ -100,7 +100,7 @@
     },
     {
         "id": 10,
-        "category": "Parlantes",
+        "category": "parlantes",
         "name": "Parlante",
         "mark": "Winco",
         "model": "W452",
@@ -111,7 +111,7 @@
     },
     {
         "id": 11,
-        "category": "Routers",
+        "category": "routers",
         "name": "Router",
         "mark": "TP Link",
         "model": "WR941ND",
@@ -122,7 +122,7 @@
     },
     {
         "id": 12,
-        "category": "Routers",
+        "category": "routers",
         "name": "Router",
         "mark": "Mercusys",
         "model": "MRS578",
@@ -133,7 +133,7 @@
     },
     {
         "id": 13,
-        "category": "Pendrives",
+        "category": "pendrives",
         "name": "Pendrive",
         "mark": "Kingston",
         "model": "KT64GB",
@@ -144,7 +144,7 @@
     },
     {
         "id": 14,
-        "category": "Pendrives",
+        "category": "pendrives",
         "name": "Pendrive",
         "mark": "Kingston",
         "model": "KT128GB",
@@ -155,7 +155,7 @@
     },
     {
         "id": 15,
-        "category": "Pendrives",
+        "category": "pendrives",
         "name": "Pendrive",
         "mark": "Kingston",
         "model": "KT32GB",
@@ -166,7 +166,7 @@
     },
     {
         "id": 16,
-        "category": "Cargadores",
+        "category": "cargadores",
         "name": "Cargador",
         "mark": "Mixor",
         "model": "Mix250",
@@ -177,7 +177,7 @@
     },
     {
         "id": 17,
-        "category": "Cargadores",
+        "category": "cargadores",
         "name": "Cargador",
         "mark": "Iphone",
         "model": "Ip14",
@@ -188,7 +188,7 @@
     },
     {
         "id": 18,
-        "category": "Cargadores",
+        "category": "cargadores",
         "name": "Cargador",
         "mark": "Soul",
         "model": "SU078",
@@ -199,7 +199,7 @@
     },
     {
         "id": 19,
-        "category": "Accesorios",
+        "category": "accesorios",
         "name": "Palo selfie",
         "mark": "Sticky",
         "model": "SP586",
@@ -210,7 +210,7 @@
     },
     {
         "id": 20,
-        "category": "Microprocesadores",
+        "category": "microprocesadores",
         "name": "Microprocesador",
         "mark": "AMD",
         "model": "RYZEN 5600X",
@@ -221,7 +221,7 @@
     },
     {
         "id": 21,
-        "category": "Microprocesadores",
+        "category": "microprocesadores",
         "name": "Microprocesador",
         "mark": "Intel",
         "model": "i3 10105",
@@ -232,7 +232,7 @@
     },
     {
         "id": 22,
-        "category": "Microprocesadores",
+        "category": "microprocesadores",
         "name": "Microprocesador",
         "mark": "AMD",
         "model": "RYZEN 3 2200g",
@@ -243,7 +243,7 @@
     },
     {
         "id": 23,
-        "category": "Motherboard",
+        "category": "motherboard",
         "name": "Motherboard",
         "mark": "Gigabyte",
         "model": "Gigabyte S1700 ",
@@ -254,7 +254,7 @@
     },
     {
         "id": 24,
-        "category": "Motherboard",
+        "category": "motherboard",
         "name": "Motherboard",
         "mark": "Asus",
         "model": "Asus Prime Z590-P",
@@ -263,4 +263,5 @@
         "stock": 9,
         "price": 72000
     }
+
 ]

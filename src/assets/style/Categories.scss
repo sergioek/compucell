@@ -20,15 +20,26 @@
             li {
                 list-style: none;
                 padding: 0.5rem;
-
-                a {
+                
+                a{
                     color: $white;
-                }
-            }
 
-            li:hover {
+                    .activeLink{
+                        color: $orange;
+                        font-weight: bold;
+                    }
+
+                    .activeLink:hover{
+                        color: $white;
+                    }
+
+                }
+        
+            }
+            li:hover{
                 background-color: $orange;
             }
         }
     }
 }
+
