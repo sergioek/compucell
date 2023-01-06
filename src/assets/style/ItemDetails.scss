@@ -15,7 +15,7 @@
         ;
 
         img:hover {
-            scale: 2;
+            scale: 1.5;
             cursor: zoom-in;
         }
     }
@@ -36,7 +36,8 @@
 
             p {
                 margin-top: 1rem;
-                font-size: 0.8rem;
+                font-size: 1rem;
+                text-transform: uppercase;
                 text-align: justify;
                 line-height: 1.5rem;
                 font-family: $josefin;
@@ -53,7 +54,6 @@
         .options {
             .addToCart {
                 @include flex(column, center, center, 2rem);
-
                 .buttonAddToCart {
                     button {
                         height: 2.5rem;
@@ -72,7 +72,20 @@
                 }
 
             }
-
+            
+            .return {
+                margin-top: 2rem;
+                @include flex(column, center, center, 0rem);
+                button {
+                    width: 8rem;
+                    height: 2.3rem;
+                    border: none;
+                    border-radius:10px;
+                    color: $white;
+                    background-color: $gray;
+                }
+            }
+          
             .buy {
                 margin-top: 2rem;
                 text-align: center;

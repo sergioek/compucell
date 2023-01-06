@@ -6,8 +6,6 @@ import { Footer } from "./components/Footer/Footer";
 import { SocialMedia } from "./components/SocialMedia/SocialMedia";
 import { Developer } from "./components/Developer/Developer";
 import { Home } from "./components/Home/Home";
-import { ItemList } from "./components/ItemList/ItemList";
-import { Item } from "./components/Item/Item";
 import { ItemDetailsContainer } from "./components/ItemDetailsContainer/ItemDetailsContainer";
 import { Contacts } from "./components/Contacts/Contacts";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -28,14 +26,8 @@ function App() {
               path="/productos/:categoryId"
               element={<ItemListContainer />}
             />
-
-            <Route
-              path="/producto/:id"
-              element={<ItemDetailsContainer/>}
-            />
-
+            <Route path="/producto/:id" element={<ItemDetailsContainer />} />
             <Route path="/contacto" element={<Contacts />} />
-
             <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>
         </Main>

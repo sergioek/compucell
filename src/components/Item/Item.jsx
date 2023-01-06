@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Item = (props) => {
   const { id, name, mark, model, price, image } = props.product;
-  const number = 1;
   return (
     <div className="item">
       <img src={"../../../public/img/products/" + image} alt={name} />
@@ -14,7 +14,10 @@ export const Item = (props) => {
             currency: "USD",
           }).format(price)}
         </strong>
-        <button>+Info</button>
+
+        <Link to={`/producto/${id}`}>
+          <button>+Info</button>
+        </Link>
       </div>
     </div>
   );

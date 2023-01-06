@@ -27,7 +27,7 @@ export const NavBar = () => {
               )}
             </NavLink>
 
-            <NavLink end to="/productos" className="link nav-link">
+            <NavLink to="/productos" className="link nav-link">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Productos

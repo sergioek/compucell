@@ -1,7 +1,15 @@
 import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { BtnAddCart } from "../BtnAddCart/BtnAddCart";
+import { useNavigate } from "react-router-dom";
 
-export const ItemDetails = ({id,category,name,description,price,stock,image, mark,model }) => {
+export const ItemDetails = ({id,category,name,description,price,stock,image,mark,model,
+}) => {
+  const navigateReturn = useNavigate();
+
+  const returnPage = () => {
+    navigateReturn(`/productos/${category}`);
+  };
   return (
     <section className="itemDetails">
       <article className="itemDetails__image">
@@ -22,11 +30,17 @@ export const ItemDetails = ({id,category,name,description,price,stock,image, mar
 
         <div className="options">
           <div className="addToCart">
-            <ItemCount />
+            <ItemCount stock={stock} />
+            {stock > 0 && <BtnAddCart />}
+          </div>
 
-            <div className="buttonAddToCart">
-              <button className="bi bi-cart"> Agregar al carrito</button>
-            </div>
+          <div className="return">
+            <button
+              className="bi bi-arrow-counterclockwise"
+              onClick={returnPage}
+            >
+              Volver
+            </button>
           </div>
 
           <div className="buy">

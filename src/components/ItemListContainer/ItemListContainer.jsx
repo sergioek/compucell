@@ -11,7 +11,7 @@ export const ItemListContainer = () => {
   const [products, setProductos] = useState([]);
   const [search, setSearch] = useState("");
   const { categoryId } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const extractData = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -20,7 +20,7 @@ export const ItemListContainer = () => {
       }, 2000);
     });
   };
-      
+
   useEffect(() => {
     extractData()
       .then((response) => {
@@ -32,27 +32,24 @@ export const ItemListContainer = () => {
               products.category == categoryId.toString().toLocaleLowerCase()
           );
         } else if (search.length > 0) {
-            filter = response.filter((products) =>
-              products.description.includes(search)
-            );
+          filter = response.filter((products) =>
+            products.description.includes(search)
+          );
         } else {
-           filter = response;
+          filter = response;
         }
-         setProductos(filter)
-        
+        setProductos(filter);
       })
-
       .catch((error) => {
         alert(error);
       });
-  }, [search,categoryId]);
+  }, [search, categoryId]);
 
   const searchProduct = (event) => {
-    navigate('/productos')
+    navigate("/productos");
     setSearch(event.target.value.toString().toLowerCase());
   };
 
- 
   return (
     <div className="itemListContainer">
       <div className="titleList">
@@ -65,7 +62,6 @@ export const ItemListContainer = () => {
       <ToastContainer autoClose={500} />
 
       <ItemList products={products} />
-
     </div>
   );
 };
