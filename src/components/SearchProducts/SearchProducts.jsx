@@ -10,6 +10,7 @@ export const SearchProducts = (props) => {
           placeholder="Ingrese un texto para buscar un producto"
           className="me-2 bi search"
           aria-label="Search"
+          id="search"
           onChange={props.functionSearch}
         />
       </Form>

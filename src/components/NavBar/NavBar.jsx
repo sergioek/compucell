@@ -10,7 +10,8 @@ export const NavBar = () => {
     <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky">
       <Container fluid>
         <Navbar.Brand>
-          <Image src="../../../public/img/logoCompucellFDZ.png" width="140px" />
+          <Image src="/img/logoCompucellFDZ.png" width="140px" />
+          <h1>Artículos de tecnología</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

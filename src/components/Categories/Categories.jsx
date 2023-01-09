@@ -8,6 +8,15 @@ export const Categories = () => {
       <nav>
         <ul>
           <li>
+            <NavLink end to="/productos">
+              {({ isActive }) => (
+                <span className={isActive ? "activeLink" : undefined}>
+                  Todos
+                </span>
+              )}
+            </NavLink>
+          </li>
+          <li>
             <NavLink end to="/productos/mouse">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>

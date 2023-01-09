@@ -13,7 +13,7 @@ export const ItemDetails = ({id,category,name,description,price,stock,image,mark
   return (
     <section className="itemDetails">
       <article className="itemDetails__image">
-        <img srcSet={"../../../public/img/products/" + image} alt={name} />
+        <img srcSet={"/img/products/" + image} alt={name} />
       </article>
 
       <article className="itemDetails__details">
@@ -45,7 +45,7 @@ export const ItemDetails = ({id,category,name,description,price,stock,image,mark
 
           <div className="buy">
             <h6>Medios de Pago:</h6>
-            <img srcSet="../../../public/img/mediosPago.png" alt="" />
+            <img srcSet="/img/mediosPago.png" alt="" />
           </div>
         </div>
       </article>

@@ -1,0 +1,35 @@
+.marksContainer{
+    margin-top: 5rem;
+    h2{ 
+        background-color:#A569BD;
+        font-size: 2em;
+        color:$white;
+        font-family: $roboto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5rem;
+        border-radius: 2rem;
+        margin-bottom: 3rem;
+    }
+&__items{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
+    gap: 2rem;
+    .markItem{
+        width: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 10rem;
+            height: auto;
+        }
+    }
+
+    .markItem:hover{
+        scale: 1.2;
+    }
+}
+}

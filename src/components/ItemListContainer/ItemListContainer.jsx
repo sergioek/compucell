@@ -12,6 +12,7 @@ export const ItemListContainer = () => {
   const [search, setSearch] = useState("");
   const { categoryId } = useParams();
   const navigate = useNavigate();
+
   const extractData = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -21,12 +22,20 @@ export const ItemListContainer = () => {
     });
   };
 
+  const notify = () => {
+    toast("Filtrando productos...", {
+      toastId: 1,
+    });
+  };
+
   useEffect(() => {
     extractData()
       .then((response) => {
+        notify();
         let filter;
         if (categoryId) {
-          toast("Filtrando productos...");
+          let valueSearch = document.querySelector("#search");
+          valueSearch.value=''
           filter = response.filter(
             (products) =>
               products.category == categoryId.toString().toLocaleLowerCase()
@@ -38,12 +47,15 @@ export const ItemListContainer = () => {
         } else {
           filter = response;
         }
+       
         setProductos(filter);
+       
       })
       .catch((error) => {
         alert(error);
       });
   }, [search, categoryId]);
+
 
   const searchProduct = (event) => {
     navigate("/productos");
