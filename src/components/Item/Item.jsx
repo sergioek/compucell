@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 export const Item = (props) => {
   const { id, name, mark, model, price, image } = props.product;
   return (
-    <div className="item">
+    <div
+      className="item"
+      data-aos="flip-left"
+      data-aos-offset="100"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+    >
       <img src={"/img/products/" + image} alt={name} />
       <div className="item__text">
         <h5>{name + " " + mark + " " + model}</h5>
