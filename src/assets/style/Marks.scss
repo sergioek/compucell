@@ -2,13 +2,13 @@
     margin-top: 5rem;
     h2{ 
         background-color:#A569BD;
-        font-size: 2em;
+        font-size: 2rem;
+        height: 5rem;
         color:$white;
         font-family: $roboto;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 5rem;
         border-radius: 2rem;
         margin-bottom: 3rem;
     }
@@ -28,8 +28,13 @@
         }
     }
 
-    .markItem:hover{
-        scale: 1.2;
-    }
 }
+}
+
+@media (max-width:480px){
+    .marksContainer{
+        h2{
+            font-size: 1rem;
+        }
+    }
 }

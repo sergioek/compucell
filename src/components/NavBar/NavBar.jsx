@@ -7,7 +7,7 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 export const NavBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky">
+    <Navbar bg="dark" variant="dark" expand="lg"  className="navBar">
       <Container fluid>
         <Navbar.Brand>
           <Image src="/img/logoCompucellFDZ.png" width="140px" />

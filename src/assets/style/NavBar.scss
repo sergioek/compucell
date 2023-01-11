@@ -20,7 +20,12 @@ h1 {
     }
 }
 
-@media (max-width: 500px) {
+.navBar {
+  
+}
+
+@media (max-width: 480px) {
+
     .nav {
         gap: 5px;
     }
