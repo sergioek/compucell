@@ -6,10 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { Categories } from "../Categories/Categories";
 import { ItemList } from "../ItemList/ItemList";
 import { useNavigate, useParams } from "react-router-dom";
+import { SelectFilter } from "../SelectFilter/SelectFilter";
 
 export const ItemListContainer = () => {
   const [products, setProductos] = useState([]);
   const [search, setSearch] = useState("");
+  const [filterPrice, setFilterPriceOrder] = useState('menor');
   const { categoryId } = useParams();
   const navigate = useNavigate();
 
@@ -35,7 +37,7 @@ export const ItemListContainer = () => {
         let filter;
         if (categoryId) {
           let valueSearch = document.querySelector("#search");
-          valueSearch.value=''
+          valueSearch.value = ''
           filter = response.filter(
             (products) =>
               products.category == categoryId.toString().toLocaleLowerCase()
@@ -47,20 +49,29 @@ export const ItemListContainer = () => {
         } else {
           filter = response;
         }
-       
-        setProductos(filter);
+
+        //Filtrando orden
+        filterPrice == "menor"
+          ? (filter = filter.sort((a, b) => a.price - b.price))
+          : (filter = filter.sort((a, b) => b.price - a.price));
+        
+          setProductos(filter);
        
       })
       .catch((error) => {
         alert(error);
       });
-  }, [search, categoryId]);
+  }, [search, categoryId,filterPrice]);
 
 
   const searchProduct = (event) => {
     navigate("/productos");
     setSearch(event.target.value.toString().toLowerCase());
   };
+
+  const filterPriceOrder = (event) => {
+    setFilterPriceOrder(event.target.value)
+  }
 
   return (
     <div className="itemListContainer">
@@ -70,9 +81,10 @@ export const ItemListContainer = () => {
       <Categories />
 
       <SearchProducts functionSearch={searchProduct} />
-
+     
       <ToastContainer autoClose={500} />
 
+      <SelectFilter order={filterPriceOrder}/>
       <ItemList products={products} />
     </div>
   );

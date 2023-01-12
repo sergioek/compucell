@@ -1,0 +1,12 @@
+.selectFilter{
+    @include flex(row,end,center,0.5rem);
+    margin: 2rem;
+    label{
+        font-weight: bolder;
+    }
+    select{
+        height: 30px;
+        border-radius: 5px;
+        background-color: $white;
+    }
+}

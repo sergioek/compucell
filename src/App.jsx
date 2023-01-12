@@ -9,34 +9,40 @@ import { Home } from "./components/Home/Home";
 import { ItemDetailsContainer } from "./components/ItemDetailsContainer/ItemDetailsContainer";
 import { Contacts } from "./components/Contacts/Contacts";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { CartProvider } from "./components/Context/CartContext";
+import { Cart } from "./components/Cart/Cart";
+
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header>
-          <NavBar />
-        </Header>
+      <CartProvider>
+        <BrowserRouter>
+          <Header>
+            <NavBar />
+          </Header>
 
-        <Main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/productos" element={<ItemListContainer />} />
-            <Route
-              path="/productos/:categoryId"
-              element={<ItemListContainer />}
-            />
-            <Route path="/producto/:id" element={<ItemDetailsContainer />} />
-            <Route path="/contacto" element={<Contacts />} />
-            <Route path="*" element={<Navigate to={"/"} />} />
-          </Routes>
-        </Main>
+          <Main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/productos" element={<ItemListContainer />} />
+              <Route
+                path="/productos/:categoryId"
+                element={<ItemListContainer />}
+              />
+              <Route path="/producto/:id" element={<ItemDetailsContainer />} />
+              <Route path="/contacto" element={<Contacts />} />
+              <Route path="/cart" element={<Cart/>}/>
+              <Route path="*" element={<Navigate to={"/"} />} />
+            </Routes>
+          </Main>
 
-        <Footer>
-          <SocialMedia />
-          <Developer />
-        </Footer>
-      </BrowserRouter>
+          <Footer>
+            <SocialMedia />
+            <Developer />
+          </Footer>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

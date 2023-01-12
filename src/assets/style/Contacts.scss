@@ -12,20 +12,19 @@
             color: $black;
             font-family: $josefin;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
 
         iframe {
             width: 90vw;
-            margin: 2rem;
+            margin: 1rem;
         }
     }
 
     .shop__contact {
-
+        
         @include flex(column, center, center, 1rem);
         background-color: $yellow;
-
         h3 {
             color: $black;
             font-size: 2rem;

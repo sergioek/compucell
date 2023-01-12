@@ -1,17 +1,18 @@
-import { useState } from "react";
-export const ItemCount = ({ stock }) => {
-  const [countProduct, setCountProduct] = useState(1);
+
+export const ItemCount = ({ stock,count,setCount }) => {
 
   const decrementCount = () => {
-    countProduct > 1 && setCountProduct(countProduct - 1);
+    count > 1 && setCount(count- 1);
   };
+
   const incrementCount = () => {
-    countProduct < stock && setCountProduct(countProduct + 1);
+    count < stock && setCount(count + 1);
   };
+
   return stock > 0 ? (
     <div className="itemCountToCart">
       <button onClick={decrementCount}>-</button>
-      <input type="number" value={countProduct} disabled />
+      <input type="number" value={count} disabled />
       <button onClick={incrementCount}>+</button>
     </div>
   ) : (

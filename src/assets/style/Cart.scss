@@ -1,0 +1,54 @@
+.cart{
+    &__title{
+        background-color:rgb(122, 122, 122);
+        border-radius: 1rem;
+        color:$white;
+        font-family: $roboto;
+        @include flex(row,center,end,1rem);
+        i{
+            font-size: 2rem;
+        }
+    }
+
+    &__products{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+        gap: 2rem;
+        justify-items: center;
+        margin: 2rem;
+        .product{
+            width: 15rem;
+            @include flex(column, center, center, 0rem);
+            background-color: $gray-ligth;
+            border-radius: 10px;
+           
+            img {
+                width: 13.5rem;
+                margin-top: 1rem;
+            }
+
+            h5 {
+                font-family: $josefin;
+                font-weight: bold;
+                font-size: 1rem;
+                color: $gray;
+                margin: 1rem 1rem 1rem 1rem;
+                }
+
+            .unit{
+                @include flex(row, center, center, 0.5rem);
+                input{
+                    width: 80px;
+                    text-align: center;
+                }   
+            }
+            
+            
+            strong {
+                font-family: $roboto;
+                font-size: 1.5rem;
+                color: $black;
+            }
+        }
+    }
+}

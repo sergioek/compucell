@@ -2,14 +2,37 @@ import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { BtnAddCart } from "../BtnAddCart/BtnAddCart";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useCartContext } from "../Context/CartContext";
+import { BtnShowCart } from "../BtnShowCart/BtnShowCart";
 
-export const ItemDetails = ({id,category,name,description,price,stock,image,mark,model,
+export const ItemDetails = ({id,category,name,description,price,stock,image,mark,model
 }) => {
+
+  const [count,setCount] = useState(1);
   const navigateReturn = useNavigate();
+  const { addToCart,productExist } = useCartContext(); 
 
   const returnPage = () => {
     navigateReturn(`/productos/${category}`);
   };
+
+  const add = () => {
+    let product = {
+      id,
+      category,
+      name,
+      description,
+      price,
+      stock,
+      image,
+      mark,
+      model,
+      count,
+    }
+    addToCart(product)
+  }
+
   return (
     <section className="itemDetails">
       <article className="itemDetails__image">
@@ -30,8 +53,14 @@ export const ItemDetails = ({id,category,name,description,price,stock,image,mark
 
         <div className="options">
           <div className="addToCart">
-            <ItemCount stock={stock} />
-            {stock > 0 && <BtnAddCart />}
+            {!productExist(id) && 
+              <ItemCount stock={stock} count={count} setCount={setCount} />
+            }
+
+            {stock > 0 && !productExist(id) ?
+              <BtnAddCart add={add} />
+              :<BtnShowCart/>
+            }
           </div>
 
           <div className="return">
