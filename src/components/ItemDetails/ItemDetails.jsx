@@ -5,13 +5,22 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCartContext } from "../Context/CartContext";
 import { BtnShowCart } from "../BtnShowCart/BtnShowCart";
+import { toast } from "react-toastify";
 
-export const ItemDetails = ({id,category,name,description,price,stock,image,mark,model
+export const ItemDetails = ({
+  id,
+  category,
+  name,
+  description,
+  price,
+  stock,
+  image,
+  mark,
+  model,
 }) => {
-
-  const [count,setCount] = useState(1);
+  const [count, setCount] = useState(1);
   const navigateReturn = useNavigate();
-  const { addToCart,productExist } = useCartContext(); 
+  const { addToCart, productExist } = useCartContext();
 
   const returnPage = () => {
     navigateReturn(`/productos/${category}`);
@@ -29,9 +38,10 @@ export const ItemDetails = ({id,category,name,description,price,stock,image,mark
       mark,
       model,
       count,
-    }
-    addToCart(product)
-  }
+    };
+    addToCart(product);
+    toast("Producto agregado al carrito.");
+  };
 
   return (
     <section className="itemDetails">
@@ -53,14 +63,15 @@ export const ItemDetails = ({id,category,name,description,price,stock,image,mark
 
         <div className="options">
           <div className="addToCart">
-            {!productExist(id) && 
+            {!productExist(id) && (
               <ItemCount stock={stock} count={count} setCount={setCount} />
-            }
+            )}
 
-            {stock > 0 && !productExist(id) ?
+            {stock > 0 && !productExist(id) ? (
               <BtnAddCart add={add} />
-              :<BtnShowCart/>
-            }
+            ) : (
+              <BtnShowCart />
+            )}
           </div>
 
           <div className="return">
