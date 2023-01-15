@@ -1,8 +1,6 @@
-import { toast } from "react-toastify";
 import { Item } from "../Item/Item";
 import { SearchError } from "../SearchError/SearchError";
-
-export const ItemList = ({ products }) => {
+export const ItemList = ({ products}) => {
   return (
     <div>
       <div className="itemList">

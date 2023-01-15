@@ -11,7 +11,7 @@ import { SelectFilter } from "../SelectFilter/SelectFilter";
 export const ItemListContainer = () => {
   const [products, setProductos] = useState([]);
   const [search, setSearch] = useState("");
-  const [filterPrice, setFilterPriceOrder] = useState('menor');
+  const [filterPrice, setFilterPriceOrder] = useState("menor");
   const { categoryId } = useParams();
   const navigate = useNavigate();
 
@@ -36,13 +36,12 @@ export const ItemListContainer = () => {
         notify();
         let filter;
         if (categoryId) {
-          let valueSearch = document.querySelector("#search");
-          valueSearch.value = ''
+          setSearch("");
           filter = response.filter(
             (products) =>
               products.category == categoryId.toString().toLocaleLowerCase()
           );
-        } else if (search.length > 0) {
+        } else if (search.length>0) {
           filter = response.filter((products) =>
             products.description.includes(search)
           );
@@ -54,15 +53,14 @@ export const ItemListContainer = () => {
         filterPrice == "menor"
           ? (filter = filter.sort((a, b) => a.price - b.price))
           : (filter = filter.sort((a, b) => b.price - a.price));
-        
-          setProductos(filter);
-       
+
+        setProductos(filter);
+
       })
       .catch((error) => {
         alert(error);
       });
   }, [search, categoryId,filterPrice]);
-
 
   const searchProduct = (event) => {
     navigate("/productos");
@@ -70,8 +68,10 @@ export const ItemListContainer = () => {
   };
 
   const filterPriceOrder = (event) => {
-    setFilterPriceOrder(event.target.value)
-  }
+    setSearch(' ')
+    setFilterPriceOrder(event.target.value);
+  };
+
 
   return (
     <div className="itemListContainer">
@@ -79,12 +79,9 @@ export const ItemListContainer = () => {
         <h2>Nuestros productos</h2>
       </div>
       <Categories />
-
-      <SearchProducts functionSearch={searchProduct} />
-     
+      <SearchProducts functionSearch={searchProduct} search={search} />
       <ToastContainer autoClose={500} />
-
-      <SelectFilter order={filterPriceOrder}/>
+      <SelectFilter order={filterPriceOrder} />
       <ItemList products={products} />
     </div>
   );

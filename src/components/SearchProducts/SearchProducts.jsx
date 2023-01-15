@@ -11,6 +11,7 @@ export const SearchProducts = (props) => {
           className="me-2 bi search"
           aria-label="Search"
           id="search"
+          value={props.search}
           onChange={props.functionSearch}
         />
       </Form>

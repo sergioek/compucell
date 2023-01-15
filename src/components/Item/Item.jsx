@@ -8,10 +8,10 @@ export const Item = (props) => {
   return (
     <div
       className="item"
-      data-aos="flip-left"
+      data-aos="fade-up"
       data-aos-offset="100"
-      data-aos-delay="100"
-      data-aos-duration="1000"
+      data-aos-delay="500"
+      data-aos-duration="500"
     >
       <img src={"/img/products/" + image} alt={name} />
       <div className="item__text">
