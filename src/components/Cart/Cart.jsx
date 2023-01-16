@@ -22,7 +22,7 @@ export const Cart = () => {
       {cart.length > 0 ? (
         <CartOptions />
       ) : (
-        <div className="emptyCart">
+        <div className="emptyCart mb-4">
           <img src="/img/carrito_vacio.png" alt="cart" />
           <Link to="/productos">
             <button className="btn btn-success bi bi-cart">

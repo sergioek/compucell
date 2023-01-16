@@ -16,7 +16,7 @@ export const ItemCart = ({
   const { deleteProduct, changeAmount } = useCartContext();
   const [amount, setAmount] = useState(count);
 
-  const change = (event) => {
+  const change = (newValue) => {
     let product = {
       id: id,
       category: category,
@@ -27,10 +27,19 @@ export const ItemCart = ({
       description: description,
       stock: stock,
       price: price,
-      count: Number(event.target.value),
+      count: newValue,
     };
     changeAmount(id, product);
-    setAmount(event.target.value);
+  };
+
+  const validate = (event) => {
+    let valueCount = Number(event.target.value)
+    if ( valueCount >= 1) {
+      change(valueCount)  
+      setAmount(valueCount)
+    } else {
+      setAmount(1)
+    }  
   };
   return (
     <div className="product">
@@ -45,7 +54,7 @@ export const ItemCart = ({
         <input
           type="number"
           className="form-control mb-2"
-          onChange={change}
+          onChange={validate}
           value={amount}
           min={1}
           max={stock}

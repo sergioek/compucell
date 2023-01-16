@@ -1,6 +1,6 @@
 .shop {
     @include flex(column, center, center, 3rem);
-
+    margin: 2rem 0rem 2rem 0rem; 
     .shop__info {
         h2 {
             color: $orange;

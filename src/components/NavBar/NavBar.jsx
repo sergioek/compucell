@@ -4,14 +4,16 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 import { CartWidget } from "../CartWidget/CartWidget";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg"  className="navBar">
       <Container fluid>
         <Navbar.Brand>
-          <Image src="/img/logoCompucellFDZ.png" width="140px" />
-          <h1>Artículos de tecnología</h1>
+          <Link to="/">
+            <Image src="/img/logoCompucellFDZ.png" width="140px" />
+            <h1>Artículos de tecnología</h1>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
