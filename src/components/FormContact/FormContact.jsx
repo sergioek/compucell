@@ -47,6 +47,7 @@ export const FormContact = () => {
             value={message.name}
             onChange={handleData}
             name="name"
+            required
           />
         </Form.Group>
 
@@ -58,6 +59,7 @@ export const FormContact = () => {
             value={message.email}
             onChange={handleData}
             name="email"
+            required
           />
         </Form.Group>
 
@@ -70,6 +72,7 @@ export const FormContact = () => {
             value={message.message}
             onChange={handleData}
             name="message"
+            required
           />
         </Form.Group>
 

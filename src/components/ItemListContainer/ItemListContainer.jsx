@@ -7,9 +7,12 @@ import { Categories } from "../Categories/Categories";
 import { ItemList } from "../ItemList/ItemList";
 import { useNavigate, useParams } from "react-router-dom";
 import { SelectFilter } from "../SelectFilter/SelectFilter";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export const ItemListContainer = () => {
   const [products, setProductos] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [filterPrice, setFilterPriceOrder] = useState("menor");
   const { categoryId } = useParams();
@@ -30,10 +33,25 @@ export const ItemListContainer = () => {
     });
   };
 
+  
+  const MySwal = withReactContent(Swal);
+
+  const alertLoading = () => {
+    MySwal.fire({
+      title: <strong>Cargando productos...</strong>,
+      html: <i>Este proceso puede tardar unos segundos 😎</i>,
+      icon: "info",
+      showConfirmButton: false,
+      timer:2000
+    });
+  }
+
+
   useEffect(() => {
     extractData()
       .then((response) => {
         notify();
+        setLoading(true)
         let filter;
         if (categoryId) {
           setSearch("");
@@ -82,7 +100,7 @@ export const ItemListContainer = () => {
       <SearchProducts functionSearch={searchProduct} search={search} />
       <ToastContainer autoClose={500} />
       <SelectFilter order={filterPriceOrder} />
-      <ItemList products={products} />
+      {loading ? <ItemList products={products} /> : alertLoading()}
     </div>
   );
 };
