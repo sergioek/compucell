@@ -33,7 +33,6 @@ export const ItemListContainer = () => {
     });
   };
 
-  
   const MySwal = withReactContent(Swal);
 
   const alertLoading = () => {
@@ -42,16 +41,14 @@ export const ItemListContainer = () => {
       html: <i>Este proceso puede tardar unos segundos 😎</i>,
       icon: "info",
       showConfirmButton: false,
-      timer:2000
+      timer: 2000,
     });
-  }
-
+  };
 
   useEffect(() => {
     extractData()
       .then((response) => {
         notify();
-        setLoading(true)
         let filter;
         if (categoryId) {
           setSearch("");
@@ -59,7 +56,7 @@ export const ItemListContainer = () => {
             (products) =>
               products.category == categoryId.toString().toLocaleLowerCase()
           );
-        } else if (search.length>0) {
+        } else if (search.length > 0) {
           filter = response.filter((products) =>
             products.description.includes(search)
           );
@@ -73,12 +70,14 @@ export const ItemListContainer = () => {
           : (filter = filter.sort((a, b) => b.price - a.price));
 
         setProductos(filter);
-
       })
       .catch((error) => {
         alert(error);
+      })
+      .finally(() => {
+        setLoading(true);
       });
-  }, [search, categoryId,filterPrice]);
+  }, [search, categoryId, filterPrice]);
 
   const searchProduct = (event) => {
     navigate("/productos");
@@ -86,10 +85,9 @@ export const ItemListContainer = () => {
   };
 
   const filterPriceOrder = (event) => {
-    setSearch(' ')
+    setSearch(" ");
     setFilterPriceOrder(event.target.value);
   };
-
 
   return (
     <div className="itemListContainer">
