@@ -46,7 +46,7 @@ export const ItemDetails = ({
   return (
     <section className="itemDetails">
       <article className="itemDetails__image">
-        <img srcSet={"/img/products/" + image} alt={name} />
+        <img srcSet={image} alt={name} />
       </article>
 
       <article className="itemDetails__details">

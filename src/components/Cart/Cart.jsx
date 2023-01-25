@@ -23,13 +23,17 @@ export const Cart = () => {
         <CartOptions />
       ) : (
         <div className="emptyCart mb-4">
-          <img src="/img/carrito_vacio.png" alt="cart" />
-          <Link to="/productos">
-            <button className="btn btn-success bi bi-cart">
-              {" "}
-              Agregar productos
-            </button>
-          </Link>
+          <img src="/img/cart-empty.png" alt="" />
+
+            <div className="addProduct">
+              <h2>¡Carrito sin productos!</h2>
+            <Link to="/productos">
+              <button className="btn btn-success bi bi-cart">
+                {" "}
+                Agregar productos
+              </button>
+            </Link>
+          </div>
         </div>
       )}
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCartContext } from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 export const ItemCart = ({
   id,
@@ -47,7 +48,7 @@ export const ItemCart = ({
         className="btn bi bi-trash3 text-danger mt-3"
         onClick={() => deleteProduct(id)}
       ></i>
-      <img src={`/img/products/${image}`} alt={name} />
+      <img src={image} alt={name} />
       <h5>{name + " " + mark + " " + model}</h5>
       <div className="unit">
         <label>Unidades:</label>
@@ -67,6 +68,10 @@ export const ItemCart = ({
           currency: "USD",
         }).format(price * count)}
       </strong>
+      <Link to={"/producto/"+id}>
+        <button className="info">+Info</button>
+      </Link>
+      
     </div>
   );
 };

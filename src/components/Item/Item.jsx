@@ -13,7 +13,7 @@ export const Item = (props) => {
       data-aos-delay="500"
       data-aos-duration="500"
     >
-      <img src={"/img/products/" + image} alt={name} />
+      <img src={image} alt={name} />
       <div className="item__text">
         <h5>{name + " " + mark + " " + model}</h5>
         <strong>

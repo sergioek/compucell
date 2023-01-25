@@ -5,10 +5,10 @@ export const SelectFilter = ({order}) => {
     <div className="selectFilter">
       <label>Ordenar:</label>
       <select onChange={order}>
-        <option value="menor">
+        <option value='asc'>
           Menor precio
         </option>
-        <option value="mayor">
+        <option value='desc'>
           Mayor precio
         </option>
       </select>

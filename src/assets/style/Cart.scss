@@ -40,15 +40,27 @@
                 input{
                     width: 80px;
                     text-align: center;
-                }   
+                } 
             }
-            
             
             strong {
                 font-family: $roboto;
                 font-size: 1.5rem;
                 color: $black;
                 padding-bottom: 1rem;
+            }
+            
+            .info {
+                width: 13.5rem;
+                height: 2rem;
+                border: none;
+                background-color: $green;
+                color: $black;
+                border-radius: 10px;
+                font-family: $roboto;
+                font-size: 1rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
             }
         }
     }
@@ -75,9 +87,19 @@
     }
 
     .emptyCart{
-        height: 90%;
-        background-image:url('/img/sin_productos.png');
+        background-color:$gray-ligth ;
+        img{
+            margin-top: 3rem;
+            width: 90%;
+            height: auto;
+            border-radius: 10rem;
+        }
         @include flex(column, center, center, 2rem);
+        .addProduct{
+            position: absolute;
+            top: 600px;
+            left: 300px;
+        }
     }
 }
 
