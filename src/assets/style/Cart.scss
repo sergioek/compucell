@@ -15,13 +15,13 @@
         grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
         gap: 2rem;
         justify-items: center;
-        margin: 1rem;
+        margin-left: 1rem;
         .product{
             width: 15rem;
             @include flex(column, center, center, 0rem);
             background-color: $gray-ligth;
             border-radius: 10px;
-           
+            margin: 2rem;
             img {
                 width: 13.5rem;
                 margin-top: 1rem;
@@ -87,28 +87,41 @@
     }
 
     .emptyCart{
-        background-color:$gray-ligth ;
+        width:100%;
+        height: 100%;
+        background-color: #f4f4f4;
         img{
-            margin-top: 3rem;
-            width: 90%;
+            width: 500px;
             height: auto;
-            border-radius: 10rem;
         }
-        @include flex(column, center, center, 2rem);
+        @include flex(row,center,center,0rem);
         .addProduct{
-            position: absolute;
-            top: 600px;
-            left: 300px;
+            h2{
+                font-family: $finger;
+                font-size: 2rem;
+                color: #628bc0;
+                text-align: center;
+            }
+            @include flex(column, center, center, 1rem); 
+            margin-bottom: 3rem;  
         }
     }
 }
 
-@media(max-width:800px){
+@media(max-width:900px){
     .cart{
      .cart__options {
         @include flex(column, center, center, 2rem);
         height: auto;
         padding: 2rem 0rem 2rem 0rem;
        }
+    .emptyCart{
+        img {
+            width: 300px;
+            height: auto;
+        }
+        @include flex(column, center, center, 0rem);
+       
+    }
     }
 }

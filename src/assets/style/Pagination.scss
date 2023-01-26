@@ -1,8 +1,0 @@
-.pag{
-    margin-top: 3rem;
-    margin-right: 2rem;
-    @include flex(row,end,center,0rem);
-    .pagination{
-        gap: 1rem;
-    }
-}

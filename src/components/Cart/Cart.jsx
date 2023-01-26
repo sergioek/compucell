@@ -22,11 +22,10 @@ export const Cart = () => {
       {cart.length > 0 ? (
         <CartOptions />
       ) : (
-        <div className="emptyCart mb-4">
-          <img src="/img/cart-empty.png" alt="" />
-
+          <div className="emptyCart">
+            <img src="/img/cart-empty-removebg-preview.png" alt="cart" />
             <div className="addProduct">
-              <h2>¡Carrito sin productos!</h2>
+              <h2>¡Carrito sin productos!😥 </h2>
             <Link to="/productos">
               <button className="btn btn-success bi bi-cart">
                 {" "}
