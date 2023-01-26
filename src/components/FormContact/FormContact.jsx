@@ -1,85 +1,108 @@
-import React, { useState } from 'react'
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { Formik } from "formik";
+import * as Yup from "yup";
 
 export const FormContact = () => {
-  const [message, setMessage] = useState({
-    name: '',
-    email: '',
-    message:''
-  });
-
-  const handleData = (event) => {
-    setMessage({
-      ...message,
-      [event.target.name]:event.target.value
-    })
-  }
-
   const MySwal = withReactContent(Swal);
 
-  const alert = () => {
+  const alert = (values) => {
     MySwal.fire({
-      title: <strong>Mensaje enviado!</strong>,
-      html: <i>Pronto recibirá en su correo electrónico una respuesta. Muchas gracias.</i>,
+      title: <strong>Mensaje enviado! a {values.email}</strong>,
+      html: (
+        <i>
+          {values.name} pronto recibirá en su correo electrónico una respuesta.
+          Muchas gracias.
+        </i>
+      ),
       icon: "success",
     });
-  }
+  };
 
-  const sendMessage = (event) => {
-    event.preventDefault()
-    alert()
-    setMessage({name:'',email:'',message:''})
-  }
-
+  const validateForm = Yup.object().shape({
+    name: Yup.string()
+      .min(6, "El campo nombre y apellido debe contener al menos 6 caracteres.")
+      .max(40, "El campo nombre y apellido tiene un límite de 40 caracteres.")
+      .required("El campo es obligatorio"),
+    email: Yup.string()
+      .email("El campo debe ser un email válido")
+      .required("El campo es obligatorio"),
+    message: Yup.string()
+      .min(6, "El campo nombre y apellido debe contener al menos 6 caracteres.")
+      .max(250, "El campo nombre y apellido tiene un límite de 250 caracteres.")
+      .required("El campo es obligatorio"),
+  });
 
   return (
     <div className="container">
       <h2 className="text-info">Consultas</h2>
-      <Form className="container" onSubmit={sendMessage}>
-        <Form.Group className="mb-3">
-          <Form.Label>Nombre y apellido</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingrese tu nombre"
-            value={message.name}
-            onChange={handleData}
-            name="name"
-            required
-          />
-        </Form.Group>
+      <Formik
+        initialValues={{ name: "", email: "", message: "" }}
+        onSubmit={(values, { resetForm }) => {
+          alert(values);
+          resetForm();
+        }}
+        validationSchema={validateForm}
+      >
+        {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
+          <form className="container" onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label>Nombre y apellido</label>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Ingrese tu nombre"
+                value={values.name}
+                onChange={handleChange}
+                name="name"
+              />
+              {errors.name && (
+                <strong className="text-danger">{errors.name}</strong>
+              )}
+            </div>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Correo electrónico</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Ingrese tu email"
-            value={message.email}
-            onChange={handleData}
-            name="email"
-            required
-          />
-        </Form.Group>
+            <div className="mb-3">
+              <label>Correo electrónico</label>
+              <input
+                className="form-control"
+                type="email"
+                placeholder="Ingrese tu email"
+                value={values.email}
+                onChange={handleChange}
+                name="email"
+              />
+              {errors.email && (
+                <strong className="text-danger">{errors.email}</strong>
+              )}
+            </div>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Consulta, duda o sugerencia</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={8}
-            placeholder="Ingresa tu mensaje"
-            value={message.message}
-            onChange={handleData}
-            name="message"
-            required
-          />
-        </Form.Group>
+            <div className="mb-3">
+              <label>Consulta, duda o sugerencia</label>
+              <textarea
+                className="form-control"
+                as="textarea"
+                rows={8}
+                placeholder="Ingresa tu mensaje"
+                value={values.message}
+                onChange={handleChange}
+                name="message"
+              ></textarea>
+              {errors.message && (
+                <strong className="text-danger">{errors.message}</strong>
+              )}
+            </div>
 
-        <Button variant="success" type="submit">
-          Enviar
-        </Button>
-      </Form>
+            <button
+              className="btn btn-success"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Enviar
+            </button>
+          </form>
+        )}
+      </Formik>
     </div>
   );
-}
+};
