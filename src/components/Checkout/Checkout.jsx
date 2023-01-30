@@ -1,35 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FormCheckout } from "./FormCheckout";
+import { useCartContext } from "../Context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const Checkout = () => {
+  
+  const { cart } = useCartContext();
+  const navigate = useNavigate();
+
+
+
+  useEffect(() => {
+    cart.length <=0 && navigate('/cart')
+  }, [])
+  
   return (
-    <div className="container mt-4">
-      <div>
+    <div className="checkout">
+      <div className="title">
         <h2 className="text-primary">Ingresá tus datos</h2>
+        <p>
+          Se enviará a tu correo electrónico el link de pago y las indicaciones
+          para recibir tu compra.
+        </p>
         <hr />
       </div>
 
-      <form className="form">
-        <div className="form-group">
-          <label htmlFor="name" className="form-label">
-            Nombre y apellido
-          </label>
-          <input type="text" name="name" className="form-control" id="name" />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="dni" className="form-label">
-            DNI
-          </label>
-          <input type="number" name="dni" className="form-control" id="dni" />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="name" className="form-label">
-            Nombre y apellido
-          </label>
-          <input type="text" name="name" className="form-control" id="name" />
-        </div>
-      </form>
+      <FormCheckout />
     </div>
   );
 };

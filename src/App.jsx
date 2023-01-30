@@ -34,8 +34,9 @@ function App() {
               <Route path="/producto/:id" element={<ItemDetailsContainer />} />
               <Route path="/contacto" element={<Contacts />} />
               <Route path="/cart" element={<Cart />} />
+
               <Route path="/checkout" element={<Checkout />} />
-              <Route path="/error404" element={<Error404/>} />
+              <Route path="/error404" element={<Error404 />} />
               <Route path="*" element={<Navigate to={"/error404"} />} />
             </Routes>
           </Main>

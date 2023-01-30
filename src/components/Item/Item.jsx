@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 export const Item = (props) => {
-  const { id, name, mark, model, price, image } = props.product;
+  const { id, name, mark, model, price, image,stock } = props.product;
   return (
     <div
       className="item"
@@ -22,7 +22,14 @@ export const Item = (props) => {
             currency: "USD",
           }).format(price)}
         </strong>
+        {
+           stock >0 && stock<=3 && <p className="text-success mt-2">¡Últimas unidades!</p>
+        }
 
+        {
+          stock<=0 && <p className="text-danger mt-2">Sin stock</p>
+        }
+ 
         <Link to={`/producto/${id}`}>
           <button>+Info</button>
         </Link>

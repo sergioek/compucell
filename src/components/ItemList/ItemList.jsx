@@ -5,8 +5,10 @@ export const ItemList = ({ products }) => {
   return (
     <div>
       <div className="itemList">
-        {products.length > 0 ? (
-          products.map((product) => <Item product={product} key={product.id} />)
+        {products.length > 0 ? 
+          products.map((product) =>  
+            product.code != 25 &&
+            <Item product={product} key={product.id} />
         ) : (
           <SearchError />
         )}

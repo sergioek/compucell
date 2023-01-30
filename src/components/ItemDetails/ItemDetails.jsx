@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 export const ItemDetails = ({
   id,
+  code,
   category,
   name,
   description,
@@ -67,7 +68,7 @@ export const ItemDetails = ({
               <ItemCount stock={stock} count={count} setCount={setCount} />
             )}
 
-            {stock > 0 && !productExist(id) ? (
+            {stock > 0 && !productExist(id) && code!=25 ? (
               <BtnAddCart add={add} />
             ) : (
               <BtnShowCart />

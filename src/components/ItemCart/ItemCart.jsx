@@ -35,10 +35,14 @@ export const ItemCart = ({
 
   const validate = (event) => {
     let valueCount = Number(event.target.value)
-    if ( valueCount >= 1) {
-      change(valueCount)  
-      setAmount(valueCount)
-    } else {
+    if (valueCount >= 1) {
+      if (valueCount > stock) {
+        setAmount(stock)
+      } else {
+        change(valueCount)  
+        setAmount(valueCount) 
+      }
+    }else {
       setAmount(1)
     }  
   };

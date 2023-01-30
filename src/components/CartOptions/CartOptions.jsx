@@ -1,6 +1,6 @@
 import React from "react";
 import { useCartContext } from "../Context/CartContext";
-
+import { Link } from "react-router-dom";
 export const CartOptions = () => {
   const { emptyCart, priceTotalCart } = useCartContext();
 
@@ -23,10 +23,12 @@ export const CartOptions = () => {
         </button>
       </div>
       <div>
-        <button className="btn btn-success bi bi-caret-right">
-          {" "}
-          Continuar compra
-        </button>
+        <Link to="/checkout">
+          <button className="btn btn-success bi bi-caret-right">
+            {" "}
+            Continuar compra
+          </button>
+        </Link>
       </div>
     </div>
   );
