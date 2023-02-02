@@ -24,7 +24,7 @@ export const ItemDetails = ({
   const { addToCart, productExist } = useCartContext();
 
   const returnPage = () => {
-    navigateReturn(`/productos/${category}`);
+    navigateReturn(`/productos`);
   };
 
   const add = () => {
@@ -68,7 +68,7 @@ export const ItemDetails = ({
               <ItemCount stock={stock} count={count} setCount={setCount} />
             )}
 
-            {stock > 0 && !productExist(id) && code!=25 ? (
+            {stock > 0 && !productExist(id) ? (
               <BtnAddCart add={add} />
             ) : (
               <BtnShowCart />

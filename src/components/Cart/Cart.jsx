@@ -33,7 +33,7 @@ export const Cart = () => {
               </button>
             </Link>
           </div>
-        </div>
+          </div>
       )}
     </div>
   );

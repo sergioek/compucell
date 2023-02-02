@@ -7,7 +7,7 @@ export const ItemList = ({ products }) => {
       <div className="itemList">
         {products.length > 0 ? 
           products.map((product) =>  
-            product.code != 25 &&
+            product.code &&
             <Item product={product} key={product.id} />
         ) : (
           <SearchError />

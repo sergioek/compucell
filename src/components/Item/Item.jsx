@@ -22,14 +22,7 @@ export const Item = (props) => {
             currency: "USD",
           }).format(price)}
         </strong>
-        {
-           stock >0 && stock<=3 && <p className="text-success mt-2">¡Últimas unidades!</p>
-        }
 
-        {
-          stock<=0 && <p className="text-danger mt-2">Sin stock</p>
-        }
- 
         <Link to={`/producto/${id}`}>
           <button>+Info</button>
         </Link>

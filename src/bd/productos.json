@@ -308,18 +308,5 @@
     "reference": ["PLACA", "MADRE", "MOTHERBOARD", "ASUS", "Z590-P"],
     "stock": 9,
     "price": 72000
-  },
-
-  {
-    "code": 25,
-    "category": "envio",
-    "name": "Envio a Domicilio",
-    "mark": "",
-    "model": "",
-    "image": "https://firebasestorage.googleapis.com/v0/b/compucell-8d167.appspot.com/o/envioDomicilio.png?alt=media&token=0c486bc9-ae35-42be-92f6-4fac773b1043",
-    "description": "Envio a domicilio",
-    "reference": ["ENVIO"],
-    "stock": 100000,
-    "price": 2000
   }
 ]

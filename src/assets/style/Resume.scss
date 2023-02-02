@@ -1,0 +1,92 @@
+.orders{
+    margin: 2rem;
+    .ordersTitle{
+        h2{
+            font-family: $roboto;
+            color: $orange;
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.2rem;
+            font-family: $josefin;
+        }
+    }
+
+    .ordersItems{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 3rem;
+        justify-items: center;
+        margin-bottom: 2rem;
+        justify-content: center;
+        .itemOrder{
+            width: 15rem;
+            background-color: $gray-ligth;
+            border-radius: 10px;
+            padding: 1rem;
+            img{width: 13rem;
+                margin-top: 1rem;
+                border-radius: 10px;
+            }
+            .total{
+                margin-top: 1rem;
+                display: flex;
+                gap: 0.5rem;
+                font-size: 1.3rem;
+                color:$green-hard;
+            }
+            label{
+                font-weight: bold;
+                font-size: 0.8rem;
+            }
+            input{
+                font-size: 0.8rem;
+            }
+          
+        }
+
+        .itemOrder:hover{
+            box-shadow: 2px 2px 2px 2px $yellow;
+        }
+    }
+
+         .emptyCart {
+             width: 100%;
+             height: 100%;
+             background-color: #f4f4f4;
+    
+             img {
+                 width: 500px;
+                 height: auto;
+             }
+    
+             @include flex(row, center, center, 2rem);
+    
+             .addProduct {
+                 h2 {
+                     font-family: $finger;
+                     font-size: 2rem;
+                     color: #628bc0;
+                     text-align: center;
+                 }
+    
+                 @include flex(column, center, center, 1rem);
+                 margin-bottom: 3rem;
+             }
+         }
+}
+
+@media(max-width:900px) {
+    .orders {
+    
+        .emptyCart {
+            img {
+                width: 300px;
+                height: auto;
+            }
+
+            @include flex(column, center, center, 0rem);
+
+        }
+    }
+}

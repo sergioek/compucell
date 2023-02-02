@@ -13,6 +13,7 @@ import { CartProvider } from "./components/Context/CartContext";
 import { Cart } from "./components/Cart/Cart";
 import { Checkout } from "./components/Checkout/Checkout";
 import { Error404 } from "./components/Error404/Error404";
+import { Resume } from "./components/Orders/Resume";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
 
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/orders" element={<Resume />}/>
               <Route path="/error404" element={<Error404 />} />
               <Route path="*" element={<Navigate to={"/error404"} />} />
             </Routes>

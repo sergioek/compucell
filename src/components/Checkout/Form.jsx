@@ -1,8 +1,15 @@
 import React from "react";
 import { Formik } from "formik";
-import { validateForm } from "./validate.js";
+import {validateForm,sameEmail,sameEmailValue,valueErrorEmail,} from "./validate.js";
 
-export const Form = ({ typeSending, sending, state, city, changeState }) => {
+export const Form = ({
+  typeSending,
+  sending,
+  state,
+  city,
+  changeState,
+  finishBuying,
+}) => {
   return (
     <Formik
       initialValues={{
@@ -18,10 +25,10 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
       }}
       validationSchema={validateForm}
       onSubmit={(event) => {
-        console.log(event);
+        finishBuying(event)
       }}
     >
-      {({ values, handleChange, handleSubmit, isSubmitting, errors }) => (
+      {({ values, handleChange, handleSubmit, errors, isSubmitting}) => (
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name" className="form-label">
@@ -34,6 +41,7 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
               id="name"
               onChange={handleChange}
               value={values.name}
+              placeholder="Ingrese su nombre y apellido."
             />
             {errors.name && <p className="text-danger">{errors.name}</p>}
           </div>
@@ -49,6 +57,7 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
               id="dni"
               onChange={handleChange}
               value={values.dni}
+              placeholder="Ingrese su DNI, sin puntos y letras."
             />
             {errors.dni && <p className="text-danger">{errors.dni}</p>}
           </div>
@@ -64,6 +73,7 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
               id="phone"
               onChange={handleChange}
               value={values.phone}
+              placeholder="Ingrese su teléfono sin 0 y 15."
             />
             {errors.phone && <p className="text-danger">{errors.phone}</p>}
           </div>
@@ -77,10 +87,16 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
               name="email"
               className="form-control"
               id="email"
-              onChange={handleChange}
+              onChange={(event) => {
+                handleChange(event);
+                sameEmail();
+              }}
               value={values.email}
+              placeholder="Ingrese su correo electrónico."
             />
             {errors.email && <p className="text-danger">{errors.email}</p>}
+
+            {sameEmailValue && <p className="text-danger">{sameEmailValue}</p>}
           </div>
 
           <div className="form-group">
@@ -92,12 +108,19 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
               name="emailRepeat"
               className="form-control"
               id="emailRepeat"
-              onChange={handleChange}
+              onChange={(event) => {
+                handleChange(event);
+                sameEmail();
+              }}
               value={values.emailRepeat}
+              placeholder="Ingrese nuevamente su correo electrónico."
             />
+
             {errors.emailRepeat && (
               <p className="text-danger">{errors.emailRepeat}</p>
             )}
+
+            {sameEmailValue && <p className="text-danger">{sameEmailValue}</p>}
           </div>
 
           <div className="form-group">
@@ -115,9 +138,9 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
               value={values.sending}
             >
               <option value="">Seleccione</option>
-              <option value="fdz">Retiro en sucursal Fernández</option>
-              <option value="forres">Retiro en sucursal Forres</option>
-              <option value="homeSending">
+              <option value="sucursal-fernandez">Retiro en sucursal Fernández</option>
+              <option value="sucursal-forres">Retiro en sucursal Forres</option>
+              <option value="envio-domicilio">
                 Envío a domicilio (Costo adicional de $2000,00)
               </option>
             </select>
@@ -183,6 +206,7 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
                   className="form-control"
                   onChange={handleChange}
                   value={values.address}
+                  placeholder="Ingrese su domicilio (calle y número)"
                 />
                 {errors.address && (
                   <p className="text-danger">{errors.address}</p>
@@ -193,10 +217,11 @@ export const Form = ({ typeSending, sending, state, city, changeState }) => {
 
           <div className="buttons">
             <button className="bi bi-cart"> Ver carrito</button>
+
             <button
               className="bi bi-credit-card-2-back"
               type="submit"
-              disabled={isSubmitting}
+              disabled={Object.keys(errors).length >0 || valueErrorEmail || isSubmitting}
             >
               {" "}
               Confirmar compra
