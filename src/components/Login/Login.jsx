@@ -3,6 +3,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { useLoginContext } from "../Context/LoginContext";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const validateForm = Yup.object().shape({
   email: Yup.string()
@@ -12,8 +14,13 @@ const validateForm = Yup.object().shape({
 });
 
 export const Login = () => {
-  const { newUser, user, loading, setLoading } = useLoginContext();
+  const { user, loading, setLoading, login } = useLoginContext();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    user.stateLogged && navigate('/products');
+    
+  },[user])
   return (
     <div className="login">
       <Formik
@@ -23,7 +30,7 @@ export const Login = () => {
         }}
         validationSchema={validateForm}
         onSubmit={(event, { resetForm }) => {
-          newUser(event, resetForm, alertRegister);
+          login(event, resetForm, navigate);
           setLoading(true);
         }}
       >
@@ -65,13 +72,12 @@ export const Login = () => {
             </div>
 
             <div>
-              {user.message && (
-                <p className="text-danger mt-2">
-                  {user.message ==
-                    "Firebase: Error (auth/email-already-in-use)." &&
-                    "El email ingresado ya esta registrado."}
-                </p>
-              )}
+              {user.error &&
+                (user.error == "Firebase: Error (auth/wrong-password)." ? (
+                  <p className="text-danger mt-2">El email y contraseñas no son correctos.</p>
+                ) : (
+                  <p className="text-danger mt-2">{user.error}</p>
+                ))}
             </div>
 
             <div className="btnLogin">

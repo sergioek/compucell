@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLoginContext } from "../Context/LoginContext";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -21,6 +21,11 @@ const validateForm = Yup.object().shape({
 
 export const Register = () => {
   const { newUser, user, loading, setLoading } = useLoginContext();
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    user.stateLogged && navigate("/products");
+  }, [user]);
   
    const MySwal = withReactContent(Swal);
    const alertRegister = () => {
@@ -81,9 +86,9 @@ export const Register = () => {
             </div>
 
             <div>
-              {user.message && (
+              {user.error && (
                 <p className="text-danger mt-2">
-                  {user.message ==
+                  {user.error ==
                     "Firebase: Error (auth/email-already-in-use)." &&
                     "El email ingresado ya esta registrado."}
                 </p>

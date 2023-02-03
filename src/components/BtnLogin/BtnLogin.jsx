@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 export const BtnLogin = () => {
   return (
-    <div>
+    <div className="btnLogin">
+      <p>¿Querés comprar?</p>
       <Link to="/login">
-        <button className="btn btn-primary bi bi-box-arrow-in-right ">
+        <button className="bi bi-box-arrow-in-right ">
           {" "}
-          Iniciar sesión
+          Inicia sesión
         </button>
       </Link>
     </div>

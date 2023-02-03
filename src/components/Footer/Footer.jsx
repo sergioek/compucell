@@ -1,5 +1,11 @@
 import React from "react";
-
-export const Footer = ({ children }) => {
-  return <footer className="footer">{children}</footer>;
+import { SocialMedia } from "../SocialMedia/SocialMedia";
+import { Developer } from "../Developer/Developer";
+export const Footer = () => {
+  return (
+    <footer className="footer">
+      <SocialMedia />
+      <Developer />
+    </footer>
+  );
 };

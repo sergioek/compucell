@@ -1,11 +1,13 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 import { authFirebase } from "../../firebase/config.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 const Login = createContext();
+
 export const useLoginContext = () => {
   return useContext(Login);
 };
@@ -16,8 +18,29 @@ export const LoginProvider = ({ children }) => {
     email: null,
     error: null,
   });
-    
+
   const [loading, setLoading] = useState(false);
+
+  const logout = () => {
+    setUser({
+      email: null,
+      stateLogged: false,
+      error: null,
+    });
+    sessionStorage.removeItem("sessionActive");
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(authFirebase, (user) => {
+      if (user && sessionStorage.getItem("sessionActive") != null) {
+        // User is signed in, see docs for a list of available properties
+        setUser({ stateLogged: true, email: user.email, error: null });
+      } else {
+        // User is signed out
+        logout();
+      }
+    });
+  }, []);
 
   const newUser = (newUserRegister, resetForm, alertRegister) => {
     createUserWithEmailAndPassword(
@@ -47,8 +70,8 @@ export const LoginProvider = ({ children }) => {
       });
   };
 
-  const login = (user,resetForm) => {
-    signInWithEmailAndPassword(auth, user.email, user.password)
+  const login = (user, resetForm, navigate) => {
+    signInWithEmailAndPassword(authFirebase, user.email, user.password)
       .then((userCredential) => {
         // Signed in
         setUser({
@@ -56,7 +79,12 @@ export const LoginProvider = ({ children }) => {
           stateLogged: true,
           error: null,
         });
+        sessionStorage.setItem(
+          "sessionActive",
+          JSON.stringify(userCredential.user.accessToken)
+        );
         resetForm();
+        navigate('/products');
       })
       .catch((error) => {
         setUser({
@@ -71,7 +99,9 @@ export const LoginProvider = ({ children }) => {
   };
 
   return (
-    <Login.Provider value={{ newUser, user, loading, setLoading }}>
+    <Login.Provider
+      value={{ newUser, user, loading, setLoading, login, logout }}
+    >
       {children}
     </Login.Provider>
   );

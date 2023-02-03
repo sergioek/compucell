@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { FormCheckout } from "./FormCheckout";
 import { useCartContext } from "../Context/CartContext";
+import { useLoginContext } from "../Context/LoginContext";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { databaseFirestore } from "../../firebase/config.js";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { date } from "yup/lib/locale";
 
 export const Checkout = () => {
   const { cart, priceTotalCart, emptyCart} = useCartContext();
   const navigate = useNavigate();
+  const { user } = useLoginContext();
   
   useEffect(() => {
     cart.length <= 0 && navigate("/cart");
-    localStorage.getItem('orders') == null &&
-    localStorage.setItem("orders", JSON.stringify([]));
-  }, []);
+    !user.stateLogged && navigate("/login");
+  }, [user]);
 
   const MySwal = withReactContent(Swal);
   const alert = (response) => {
@@ -31,21 +31,14 @@ export const Checkout = () => {
     });
   };
 
-  const saveOrder = (newOrder) => {
-    const arrayOrders = JSON.parse(localStorage.getItem('orders'))
-    arrayOrders.push(newOrder)
-    localStorage.setItem('orders',JSON.stringify(arrayOrders))
 
-  }
-
-  
   const finishBuying = (user) => {
     let total;
     user.sending == "envio-domicilio" ?  total=priceTotalCart()+2000 : total=priceTotalCart()
-    
     let dateTime = new Date();
     let order = {
       user: user,
+      userEmailOrder:user.email,
       products: cart,
       total: total,
       date: dateTime.toLocaleDateString(),
@@ -57,7 +50,6 @@ export const Checkout = () => {
       .then((response) => {
        emptyCart();
         alert(response);
-        saveOrder({...order,id:response.id });
         navigate('/orders')
       })
       .catch((error) => {

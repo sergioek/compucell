@@ -8,7 +8,7 @@ export const Error404 = () => {
       <div className="text">
         <h2>Página no encontrada 😅</h2>
         <p>La página solicitada no existe.</p>
-        <Link to="/productos">
+        <Link to="/products">
           <button>Volver</button>
         </Link>
       </div>

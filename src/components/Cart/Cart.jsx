@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ItemCart } from "../ItemCart/ItemCart";
 import { useCartContext } from "../Context/CartContext";
+import { useLoginContext } from "../Context/LoginContext";
 import { CartOptions } from "../CartOptions/CartOptions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Cart = () => {
   const { cart } = useCartContext();
+  const { user } = useLoginContext();
+  const navigate = useNavigate()
+  useEffect(() => {
+    !user.stateLogged && navigate('/login')
+  },[user])
+
   return (
     <div className="cart">
       <div className="cart__title container-fluid">
