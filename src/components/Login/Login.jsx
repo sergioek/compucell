@@ -19,7 +19,6 @@ export const Login = () => {
 
   useEffect(() => {
     user.stateLogged && navigate('/products');
-    
   },[user])
   return (
     <div className="login">

@@ -22,10 +22,11 @@
                 font-family: $josefin;
             }
         }
-        margin-top: 8rem;
+        
+        margin: 8rem 2rem 0rem 2rem ;
         z-index: 3;
         width: 50%;
-        min-width: 350px;
+        min-width: 300px;
         .inputContainer {
             @include flex(column, start, start, 0.5rem);
             margin-top: 1rem;
