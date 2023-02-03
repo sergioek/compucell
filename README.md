@@ -23,7 +23,7 @@ Este proyecto se construyo con React JS, bajo la herramienta Vite.js. Estas tecn
 * [TOASTIFY](https://www.npmjs.com/package/toastify-js): Version 1.12.0
 
 
-##netlify
+#netlify
 ***
 Proyecto visible en:
 * [Compucell](https://compucell.netlify.app/) 
