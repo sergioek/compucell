@@ -26,7 +26,7 @@ export const Cart = () => {
             <img src="/img/cart-empty-removebg-preview.png" alt="cart" />
             <div className="addProduct">
               <h2>¡Carrito sin productos!😥 </h2>
-            <Link to="/productos">
+            <Link to="/products">
               <button className="btn btn-success bi bi-cart">
                 {" "}
                 Agregar productos

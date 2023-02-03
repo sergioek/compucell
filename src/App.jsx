@@ -14,41 +14,51 @@ import { Cart } from "./components/Cart/Cart";
 import { Checkout } from "./components/Checkout/Checkout";
 import { Error404 } from "./components/Error404/Error404";
 import { Resume } from "./components/Orders/Resume";
+import { Register } from "./components/Login/Register";
+import { LoginProvider } from "./components/Context/LoginContext";
+import { Login } from "./components/Login/Login";
 
 function App() {
   return (
     <div className="App">
-      <CartProvider>
-        <BrowserRouter>
-          <Header>
-            <NavBar />
-          </Header>
+      <LoginProvider>
+        <CartProvider>
+          <BrowserRouter>
+            <Header>
+              <NavBar />
+            </Header>
 
-          <Main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/productos" element={<ItemListContainer />} />
-              <Route
-                path="/productos/:categoryId"
-                element={<ItemListContainer />}
-              />
-              <Route path="/producto/:id" element={<ItemDetailsContainer />} />
-              <Route path="/contacto" element={<Contacts />} />
-              <Route path="/cart" element={<Cart />} />
+            <Main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<ItemListContainer />} />
+                <Route
+                  path="/products/:categoryId"
+                  element={<ItemListContainer />}
+                />
+                <Route path="/product/:id" element={<ItemDetailsContainer />} />
+                <Route path="/contact" element={<Contacts />} />
+                <Route path="/cart" element={<Cart />} />
 
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/orders" element={<Resume />}/>
-              <Route path="/error404" element={<Error404 />} />
-              <Route path="*" element={<Navigate to={"/error404"} />} />
-            </Routes>
-          </Main>
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/orders" element={<Resume />} />
 
-          <Footer>
-            <SocialMedia />
-            <Developer />
-          </Footer>
-        </BrowserRouter>
-      </CartProvider>
+                <Route path="/register" element={<Register />} />
+
+                <Route path="/login" element={<Login/>} />
+
+                <Route path="/error404" element={<Error404 />} />
+                <Route path="*" element={<Navigate to={"/error404"} />} />
+              </Routes>
+            </Main>
+
+            <Footer>
+              <SocialMedia />
+              <Developer />
+            </Footer>
+          </BrowserRouter>
+        </CartProvider>
+      </LoginProvider>
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { BtnAddCart } from "../BtnAddCart/BtnAddCart";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCartContext } from "../Context/CartContext";
+import { useLoginContext } from "../Context/LoginContext";
 import { BtnShowCart } from "../BtnShowCart/BtnShowCart";
 import { toast } from "react-toastify";
+import { BtnLogin } from "../BtnLogin/BtnLogin";
 
 export const ItemDetails = ({
   id,
@@ -22,9 +24,9 @@ export const ItemDetails = ({
   const [count, setCount] = useState(1);
   const navigateReturn = useNavigate();
   const { addToCart, productExist } = useCartContext();
-
+  const { user } = useLoginContext();
   const returnPage = () => {
-    navigateReturn(`/productos`);
+    navigateReturn(`/products`);
   };
 
   const add = () => {
@@ -68,10 +70,14 @@ export const ItemDetails = ({
               <ItemCount stock={stock} count={count} setCount={setCount} />
             )}
 
-            {stock > 0 && !productExist(id) ? (
-              <BtnAddCart add={add} />
-            ) : (
-              <BtnShowCart />
+            {user.stateLogged == true ? (
+              stock > 0 && !productExist(id) ? (
+                <BtnAddCart add={add} />
+              ) : (
+                <BtnShowCart />
+              )
+            ) : ( <BtnLogin/>
+              
             )}
           </div>
 

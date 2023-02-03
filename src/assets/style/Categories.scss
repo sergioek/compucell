@@ -2,7 +2,7 @@
     @include flex(column, center, center, 0rem);
     background-color: $gray;
     margin: 2rem;
-    border-radius: 1rem;
+    border-radius: 0rem 0rem 1rem 1rem;
 
     h3 {
         padding-top: 1rem;

@@ -25,7 +25,7 @@ export const ItemListContainer = () => {
   useProducts(setProducts,setLoading,filterPrice,categoryId,search,notify,setSearch)
 
   const searchProduct = (event) => {
-    navigate("/productos");
+    navigate("/products");
     setSearch(event.target.value);
   };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import {validateForm,sameEmail,sameEmailValue,valueErrorEmail,} from "./validate.js";
+import { Link } from "react-router-dom";
 
 export const Form = ({
   typeSending,
@@ -216,8 +217,11 @@ export const Form = ({
           )}
 
           <div className="buttons">
-            <button className="bi bi-cart"> Ver carrito</button>
-
+            
+            <Link to="/cart">
+              <button className="bi bi-cart"> Ver carrito</button>
+            </Link>
+         
             <button
               className="bi bi-credit-card-2-back"
               type="submit"

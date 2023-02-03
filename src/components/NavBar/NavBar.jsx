@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "react-bootstrap/Image";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
+import { LoginWidget } from "../Login/LoginWidget";
 export const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="navBar">
@@ -31,7 +32,7 @@ export const NavBar = () => {
               )}
             </NavLink>
 
-            <NavLink to="/productos" className="link nav-link">
+            <NavLink to="/products" className="link nav-link">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Productos
@@ -39,13 +40,16 @@ export const NavBar = () => {
               )}
             </NavLink>
 
-            <NavLink end to="/contacto" className="link nav-link">
+
+            <NavLink end to="/contact" className="link nav-link">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Contacto
                 </span>
               )}
             </NavLink>
+
+            <LoginWidget/>
           </Nav>
           <CartWidget />
         </Navbar.Collapse>

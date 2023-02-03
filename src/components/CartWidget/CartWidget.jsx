@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useCartContext } from "../Context/CartContext";
 import { Link } from "react-router-dom";
+
 export const CartWidget = () => {
   const { totalCount } = useCartContext();
   return (

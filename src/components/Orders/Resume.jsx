@@ -32,7 +32,7 @@ export const Resume = () => {
           />
           <div className="addProduct">
             <h2>¡Sin ordenes de compra!😥 </h2>
-            <Link to="/productos">
+            <Link to="/products">
               <button className="btn btn-success bi bi-cart">
                 {" "}
                 Comienza a comprar

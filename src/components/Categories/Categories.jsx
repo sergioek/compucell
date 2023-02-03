@@ -8,7 +8,7 @@ export const Categories = () => {
       <nav>
         <ul>
           <li>
-            <NavLink end to="/productos">
+            <NavLink end to="/products">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Todos
@@ -17,7 +17,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/mouse">
+            <NavLink end to="/products/mouse">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Mouse
@@ -27,7 +27,7 @@ export const Categories = () => {
           </li>
 
           <li>
-            <NavLink end to="/productos/teclados">
+            <NavLink end to="/products/teclados">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Teclados
@@ -36,7 +36,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/microprocesadores">
+            <NavLink end to="/products/microprocesadores">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Microprocesadores
@@ -45,7 +45,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/pendrives">
+            <NavLink end to="/products/pendrives">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Pendrives / MicroSD
@@ -54,7 +54,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/parlantes">
+            <NavLink end to="/products/parlantes">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Parlantes
@@ -63,7 +63,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/routers">
+            <NavLink end to="/products/routers">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Routers
@@ -72,7 +72,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/cargadores">
+            <NavLink end to="/products/cargadores">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Cargadores
@@ -81,7 +81,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/motherboard">
+            <NavLink end to="/products/motherboard">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Motherboards
@@ -90,7 +90,7 @@ export const Categories = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink end to="/productos/accesorios">
+            <NavLink end to="/products/accesorios">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
                   Accesorios

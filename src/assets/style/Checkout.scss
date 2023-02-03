@@ -1,4 +1,4 @@
-.checkout{
+.checkout {
     width: 100%;
     height: 100%;
     background-image: url("/img/checkout.jpg");
@@ -7,57 +7,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   .form,.title{
+
+    .form,
+    .title {
         position: relative;
         z-index: 3;
         width: 70%;
     }
-    .title{
+
+    .title {
         margin-top: 2rem;
-        h2{
+
+        h2 {
             font-family: $roboto;
             color: $orange;
             font-size: 2rem;
         }
-        p{
+
+        p {
             font-size: 1.2rem;
             font-family: $josefin;
         }
     }
 
-   .form{
-    margin-bottom: 3rem;
-    label{
-        font-family: $josefin;
-        font-size: 1rem;
-        font-weight: 900;
-    }
-    .buttons{
-        margin-top: 3rem;
-        display: flex;
-        justify-content: end;
-        flex-direction: row;
-        gap: 3rem;
-        button{height: 3rem;}
-        :first-child{
-            width: 10rem;
-            background-color: $gray;
-            border: none;
-            color: $white;
+    .form {
+        margin-bottom: 3rem;
+
+        label {
+            font-family: $josefin;
+            font-size: 1rem;
+            font-weight: 900;
         }
-        :last-child {
-            width: 10rem;
-            background-color: $green-hard;
-            border: none;
-            color: $white;
+
+        .buttons {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: end;
+            flex-direction: row;
+            gap: 3rem;
+
+            a {
+                button {
+                    width: 10rem;
+                    background-color: $gray;
+                    border: none;
+                    color: $white;
+                }
+            }
+
+            button {
+                height: 3rem;
+                width: 10rem;
+                background-color: $green-hard;
+                border: none;
+                color: $white;
+            }
         }
     }
-   }
-    
+
 }
 
-.checkout:before{
+.checkout:before {
     content: '';
     width: 100%;
     height: 100%;
@@ -68,13 +78,15 @@
 }
 
 @media (max-width:900px) {
-    .checkout{
-        .form{
-            .buttons{
+    .checkout {
+        .form {
+            .buttons {
                 flex-direction: column;
                 gap: 1rem;
                 margin-top: 2rem;
-                :first-child,:last-child{
+
+                :first-child,
+                :last-child {
                     width: 100%;
                 }
             }

@@ -23,7 +23,7 @@ export const Item = (props) => {
           }).format(price)}
         </strong>
 
-        <Link to={`/producto/${id}`}>
+        <Link to={`/product/${id}`}>
           <button>+Info</button>
         </Link>
       </div>
