@@ -38,8 +38,8 @@ export const ItemDetailsContainer = () => {
 
   return (
     <div className="itemDetailsContainer">
-      {product.name && <ItemDetails {...product} />}
       {<ToastContainer autoClose={500} />}
+      {product.name && <ItemDetails {...product} />}
     </div>
   );
 };
