@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 export const Item = (props) => {
-  const { id, name, mark, model, price, image,stock } = props.product;
+  const { id, name, mark, model, price, image, stock } = props.product;
   return (
     <div
       className="item"

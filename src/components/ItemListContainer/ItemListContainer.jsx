@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { SearchProducts } from "../SearchProducts/SearchProducts";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,7 +22,15 @@ export const ItemListContainer = () => {
     });
   };
 
-  useProducts(setProducts,setLoading,filterPrice,categoryId,search,notify,setSearch)
+  useProducts(
+    setProducts,
+    setLoading,
+    filterPrice,
+    categoryId,
+    search,
+    notify,
+    setSearch
+  );
 
   const searchProduct = (event) => {
     navigate("/products");

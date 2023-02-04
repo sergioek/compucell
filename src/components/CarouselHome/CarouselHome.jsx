@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Carousel } from "react-bootstrap";
 export const CarouselHome = () => {
   return (
@@ -45,4 +45,4 @@ export const CarouselHome = () => {
       </Carousel.Item>
     </Carousel>
   );
-}
+};

@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <LoginProvider>
         <CartProvider>
-          <AppRoutes/>
+          <AppRoutes />
         </CartProvider>
       </LoginProvider>
     </div>

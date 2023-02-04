@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { renderCity, renderStates } from "./api.js";
-import { useCartContext } from "../Context/CartContext.jsx";
 import { Form } from "./Form.jsx";
 
-export const FormCheckout = ({finishBuying}) => {
+export const FormCheckout = ({ finishBuying }) => {
   const [typeSending, setTypeSending] = useState(false);
   const [state, setState] = useState([]);
   const [city, setCity] = useState([]);

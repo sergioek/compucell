@@ -8,10 +8,10 @@ import { Link, useNavigate } from "react-router-dom";
 export const Cart = () => {
   const { cart } = useCartContext();
   const { user } = useLoginContext();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
-    !user.stateLogged && navigate('/login')
-  },[user])
+    !user.stateLogged && navigate("/login");
+  }, [user]);
 
   return (
     <div className="cart">
@@ -29,10 +29,10 @@ export const Cart = () => {
       {cart.length > 0 ? (
         <CartOptions />
       ) : (
-          <div className="emptyCart">
-            <img src="/img/cart-empty-removebg-preview.png" alt="cart" />
-            <div className="addProduct">
-              <h2>¡Carrito sin productos!😥 </h2>
+        <div className="emptyCart">
+          <img src="/img/cart-empty-removebg-preview.png" alt="cart" />
+          <div className="addProduct">
+            <h2>¡Carrito sin productos!😥 </h2>
             <Link to="/products">
               <button className="btn btn-success bi bi-cart">
                 {" "}
@@ -40,7 +40,7 @@ export const Cart = () => {
               </button>
             </Link>
           </div>
-          </div>
+        </div>
       )}
     </div>
   );

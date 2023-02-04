@@ -1,9 +1,10 @@
 h1 {
-    color:$white;
+    color: $white;
     font-size: 0.6rem;
     font-style: oblique;
     margin-left: 1.5rem;
 }
+
 .nav {
     display: flex;
     flex-wrap: nowrap;
@@ -16,7 +17,7 @@ h1 {
         font-size: 1rem;
     }
 
-    .activeLink{
+    .activeLink {
         color: $orange;
     }
 }

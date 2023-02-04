@@ -1,6 +1,11 @@
 import React from "react";
 import { Formik } from "formik";
-import {validateForm,sameEmail,sameEmailValue,valueErrorEmail,} from "./validate.js";
+import {
+  validateForm,
+  sameEmail,
+  sameEmailValue,
+  valueErrorEmail,
+} from "./validate.js";
 import { Link } from "react-router-dom";
 
 export const Form = ({
@@ -26,10 +31,10 @@ export const Form = ({
       }}
       validationSchema={validateForm}
       onSubmit={(event) => {
-        finishBuying(event)
+        finishBuying(event);
       }}
     >
-      {({ values, handleChange, handleSubmit, errors, isSubmitting}) => (
+      {({ values, handleChange, handleSubmit, errors, isSubmitting }) => (
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name" className="form-label">
@@ -139,7 +144,9 @@ export const Form = ({
               value={values.sending}
             >
               <option value="">Seleccione</option>
-              <option value="sucursal-fernandez">Retiro en sucursal Fernández</option>
+              <option value="sucursal-fernandez">
+                Retiro en sucursal Fernández
+              </option>
               <option value="sucursal-forres">Retiro en sucursal Forres</option>
               <option value="envio-domicilio">
                 Envío a domicilio (Costo adicional de $2000,00)
@@ -217,15 +224,18 @@ export const Form = ({
           )}
 
           <div className="buttons">
-            
             <Link to="/cart">
               <button className="bi bi-cart"> Ver carrito</button>
             </Link>
-         
+
             <button
               className="bi bi-credit-card-2-back"
               type="submit"
-              disabled={Object.keys(errors).length >0 || valueErrorEmail || isSubmitting}
+              disabled={
+                Object.keys(errors).length > 0 ||
+                valueErrorEmail ||
+                isSubmitting
+              }
             >
               {" "}
               Confirmar compra

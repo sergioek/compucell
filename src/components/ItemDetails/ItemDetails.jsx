@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { BtnAddCart } from "../BtnAddCart/BtnAddCart";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCartContext } from "../Context/CartContext";
 import { useLoginContext } from "../Context/LoginContext";
@@ -76,8 +76,8 @@ export const ItemDetails = ({
               ) : (
                 <BtnShowCart />
               )
-            ) : ( <BtnLogin/>
-              
+            ) : (
+              <BtnLogin />
             )}
           </div>
 

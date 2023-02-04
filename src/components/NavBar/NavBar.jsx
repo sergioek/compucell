@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "react-bootstrap/Image";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
@@ -40,7 +39,6 @@ export const NavBar = () => {
               )}
             </NavLink>
 
-
             <NavLink end to="/contact" className="link nav-link">
               {({ isActive }) => (
                 <span className={isActive ? "activeLink" : undefined}>
@@ -49,7 +47,7 @@ export const NavBar = () => {
               )}
             </NavLink>
 
-            <LoginWidget/>
+            <LoginWidget />
           </Nav>
           <CartWidget />
         </Navbar.Collapse>

@@ -34,17 +34,17 @@ export const ItemCart = ({
   };
 
   const validate = (event) => {
-    let valueCount = Number(event.target.value)
+    let valueCount = Number(event.target.value);
     if (valueCount >= 1) {
       if (valueCount > stock) {
-        setAmount(stock)
+        setAmount(stock);
       } else {
-        change(valueCount)  
-        setAmount(valueCount) 
+        change(valueCount);
+        setAmount(valueCount);
       }
-    }else {
-      setAmount(1)
-    }  
+    } else {
+      setAmount(1);
+    }
   };
   return (
     <div className="product">
@@ -72,10 +72,9 @@ export const ItemCart = ({
           currency: "USD",
         }).format(price * count)}
       </strong>
-      <Link to={"/producto/"+id}>
+      <Link to={"/producto/" + id}>
         <button className="info">+Info</button>
       </Link>
-      
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FormCheckout } from "./FormCheckout";
 import { useCartContext } from "../Context/CartContext";
 import { useLoginContext } from "../Context/LoginContext";
@@ -9,10 +9,10 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 export const Checkout = () => {
-  const { cart, priceTotalCart, emptyCart} = useCartContext();
+  const { cart, priceTotalCart, emptyCart } = useCartContext();
   const navigate = useNavigate();
   const { user } = useLoginContext();
-  
+
   useEffect(() => {
     cart.length <= 0 && navigate("/cart");
     !user.stateLogged && navigate("/login");
@@ -24,21 +24,24 @@ export const Checkout = () => {
       title: <strong>Compra finalizada!</strong>,
       html: (
         <i>
-          El código de orden es: <strong>{response.id}</strong>. Pronto recibirá en su correo electrónico los detalles de la compra y su factura. ¡Muchas Gracias!.
+          El código de orden es: <strong>{response.id}</strong>. Pronto recibirá
+          en su correo electrónico los detalles de la compra y su factura.
+          ¡Muchas Gracias!.
         </i>
       ),
       icon: "success",
     });
   };
 
-
   const finishBuying = (user) => {
     let total;
-    user.sending == "envio-domicilio" ?  total=priceTotalCart()+2000 : total=priceTotalCart()
+    user.sending == "envio-domicilio"
+      ? (total = priceTotalCart() + 2000)
+      : (total = priceTotalCart());
     let dateTime = new Date();
     let order = {
       user: user,
-      userEmailOrder:user.email,
+      userEmailOrder: user.email,
       products: cart,
       total: total,
       date: dateTime.toLocaleDateString(),
@@ -48,9 +51,9 @@ export const Checkout = () => {
     const ref = collection(databaseFirestore, "orders");
     addDoc(ref, order)
       .then((response) => {
-       emptyCart();
+        emptyCart();
         alert(response);
-        navigate('/orders')
+        navigate("/orders");
       })
       .catch((error) => {
         console.log(error);

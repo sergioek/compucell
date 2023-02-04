@@ -44,11 +44,11 @@
 @media (max-width:480px) {
     .filter {
         nav {
-            ul{
+            ul {
                 @include flex(column, center, center, 1.5rem);
                 flex-wrap: nowrap;
             }
-          
+
         }
     }
 }

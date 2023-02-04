@@ -1,27 +1,30 @@
-.cart{
-    &__title{
+.cart {
+    &__title {
         height: 5rem;
-        color:$black;
+        color: $black;
         background-color: $yellow;
         font-family: $josefin;
-        @include flex(row,center,center,1rem);
-        i{
+        @include flex(row, center, center, 1rem);
+
+        i {
             font-size: 2.5rem;
         }
     }
 
-    &__products{
+    &__products {
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         gap: 2rem;
         justify-items: center;
         margin-left: 1rem;
-        .product{
+
+        .product {
             width: 15rem;
             @include flex(column, center, center, 0rem);
             background-color: $gray-ligth;
             border-radius: 10px;
             margin: 2rem;
+
             img {
                 width: 13.5rem;
                 margin-top: 1rem;
@@ -33,23 +36,24 @@
                 font-size: 1rem;
                 color: $gray;
                 margin: 1rem 1rem 1rem 1rem;
-                }
+            }
 
-            .unit{
+            .unit {
                 @include flex(row, center, center, 0.5rem);
-                input{
+
+                input {
                     width: 80px;
                     text-align: center;
-                } 
+                }
             }
-            
+
             strong {
                 font-family: $roboto;
                 font-size: 1.5rem;
                 color: $black;
                 padding-bottom: 1rem;
             }
-            
+
             .info {
                 width: 13.5rem;
                 height: 2rem;
@@ -65,19 +69,22 @@
         }
     }
 
-    .cart__options{
+    .cart__options {
         background-color: $yellow;
         height: 6rem;
-       
-        @include flex(row,center,center,2rem);
-        .total{
+
+        @include flex(row, center, center, 2rem);
+
+        .total {
             display: flex;
             gap: 1rem;
-            h2:first-child{
+
+            h2:first-child {
                 color: $black;
                 font-family: $roboto;
             }
-            h2{
+
+            h2 {
                 color: rgb(157, 10, 194);
                 font-family: $josefin;
                 font-weight: bold;
@@ -86,42 +93,48 @@
         }
     }
 
-    .emptyCart{
-        width:100%;
+    .emptyCart {
+        width: 100%;
         height: 100%;
         background-color: #f4f4f4;
-        img{
+
+        img {
             width: 500px;
             height: auto;
         }
-        @include flex(row,center,center,0rem);
-        .addProduct{
-            h2{
+
+        @include flex(row, center, center, 0rem);
+
+        .addProduct {
+            h2 {
                 font-family: $finger;
                 font-size: 2rem;
                 color: #628bc0;
                 text-align: center;
             }
-            @include flex(column, center, center, 1rem); 
-            margin-bottom: 3rem;  
+
+            @include flex(column, center, center, 1rem);
+            margin-bottom: 3rem;
         }
     }
 }
 
-@media(max-width:900px){
-    .cart{
-     .cart__options {
-        @include flex(column, center, center, 2rem);
-        height: auto;
-        padding: 2rem 0rem 2rem 0rem;
-       }
-    .emptyCart{
-        img {
-            width: 300px;
+@media(max-width:900px) {
+    .cart {
+        .cart__options {
+            @include flex(column, center, center, 2rem);
             height: auto;
+            padding: 2rem 0rem 2rem 0rem;
         }
-        @include flex(column, center, center, 0rem);
-       
-    }
+
+        .emptyCart {
+            img {
+                width: 300px;
+                height: auto;
+            }
+
+            @include flex(column, center, center, 0rem);
+
+        }
     }
 }

@@ -4,9 +4,11 @@
     @include flex(row,start,center,0rem);
     .itemLinks{
         @include flex(column, start, center, 0.2rem);
+    
     }
    #basic-nav-dropdown{
     color:$white !important;
     font-family: $finger;
+   
    }
 }

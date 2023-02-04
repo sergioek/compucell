@@ -1,6 +1,7 @@
 .shop {
     @include flex(column, center, center, 3rem);
-    margin: 2rem 0rem 2rem 0rem; 
+    margin: 2rem 0rem 2rem 0rem;
+
     .shop__info {
         h2 {
             color: $orange;
@@ -22,9 +23,10 @@
     }
 
     .shop__contact {
-        
+
         @include flex(column, center, center, 1rem);
         background-color: $yellow;
+
         h3 {
             color: $black;
             font-size: 2rem;

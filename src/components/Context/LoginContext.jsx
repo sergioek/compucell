@@ -84,7 +84,7 @@ export const LoginProvider = ({ children }) => {
           JSON.stringify(userCredential.user.accessToken)
         );
         resetForm();
-        navigate('/products');
+        navigate("/products");
       })
       .catch((error) => {
         setUser({

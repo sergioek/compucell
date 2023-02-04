@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
-export const ItemOrder = ({order}) => {
+export const ItemOrder = ({ order }) => {
   return (
     <div
       className="itemOrder"
@@ -58,4 +58,4 @@ export const ItemOrder = ({order}) => {
       </div>
     </div>
   );
-}
+};

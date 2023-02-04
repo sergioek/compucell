@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLoginContext } from "../Context/LoginContext";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { databaseFirestore } from "../../firebase/config.js";
-import { ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Resume = () => {
@@ -28,7 +28,7 @@ export const Resume = () => {
         );
       });
     } else {
-      navigate('/login')
+      navigate("/login");
     }
   }, [user]);
 
@@ -41,7 +41,7 @@ export const Resume = () => {
         <hr />
       </div>
 
-      {user.stateLogged && orders.length>0 ? (
+      {user.stateLogged && orders.length > 0 ? (
         <div className="ordersItems">
           {orders.map((order) => (
             <ItemOrder order={order} key={order.id} />

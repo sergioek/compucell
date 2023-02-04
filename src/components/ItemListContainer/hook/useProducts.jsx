@@ -1,8 +1,23 @@
 import { useEffect } from "react";
-import {collection,getDocs,query,where,orderBy,limit,} from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+} from "firebase/firestore";
 import { databaseFirestore } from "../../../firebase/config.js";
 
-export const useProducts = (setProducts, setLoading, filterPrice, categoryId,search,notify,setSearch) => {
+export const useProducts = (
+  setProducts,
+  setLoading,
+  filterPrice,
+  categoryId,
+  search,
+  notify,
+  setSearch
+) => {
   useEffect(() => {
     const productRef = collection(databaseFirestore, "products");
     let filter;

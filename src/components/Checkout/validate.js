@@ -25,16 +25,14 @@ export const validateForm = Yup.object().shape({
   sending: Yup.string().required("Este campo es obligatorio"),
 });
 
-
 export let sameEmailValue;
 export let valueErrorEmail;
- export const sameEmail = () => {
-   if (emailRepeat.value !== email.value) {
-     sameEmailValue = "Los correos electrónicos no coinciden.";
-     valueErrorEmail = true;
-   
-   } else {
-     sameEmailValue = "";
-     valueErrorEmail = false;
-   }
- };
+export const sameEmail = () => {
+  if (emailRepeat.value !== email.value) {
+    sameEmailValue = "Los correos electrónicos no coinciden.";
+    valueErrorEmail = true;
+  } else {
+    sameEmailValue = "";
+    valueErrorEmail = false;
+  }
+};

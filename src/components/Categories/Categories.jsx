@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 export const Categories = () => {
-  let activeClassName = "underline";
   return (
     <div className="filter">
       <h3>Categorías</h3>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
@@ -16,7 +16,7 @@ const validateForm = Yup.object().shape({
     .required("El campo es obligatorio."),
 });
 
-export const Form = ({alert}) => {
+export const Form = ({ alert }) => {
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
@@ -85,4 +85,4 @@ export const Form = ({alert}) => {
       )}
     </Formik>
   );
-}
+};

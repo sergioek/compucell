@@ -12,24 +12,27 @@
 
     .form {
         .title {
-            h2{
+            h2 {
                 font-size: 2rem;
                 color: $black;
                 font-family: $roboto;
             }
-            p{
+
+            p {
                 font-size: 1.2rem;
                 font-family: $josefin;
             }
         }
-        
+
         padding: 8rem 1rem 4rem 1rem;
         z-index: 3;
         width: 50%;
         min-width: 300px;
+
         .inputContainer {
             @include flex(column, start, start, 0.5rem);
             margin-top: 1rem;
+
             label {
                 color: $black;
                 font-weight: bolder;
@@ -41,6 +44,7 @@
         .btnLogin {
             margin-top: 2rem;
             @include flex(column, center, end, 0.5rem);
+
             button {
                 width: 8rem;
                 height: 3rem;
@@ -50,12 +54,13 @@
                 z-index: 3;
                 border-radius: 10px;
             }
-            a{
+
+            a {
                 font-size: 1.1rem;
                 color: rgb(44, 44, 255);
                 font-family: $josefin;
                 font-weight: bolder;
-               
+
             }
 
         }

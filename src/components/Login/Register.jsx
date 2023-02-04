@@ -1,10 +1,11 @@
-import React,{useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoginContext } from "../Context/LoginContext";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { BtnShowPassword } from "../BtnShowPassword/BtnShowPassword";
 
 const validateForm = Yup.object().shape({
   email: Yup.string()
@@ -22,24 +23,27 @@ const validateForm = Yup.object().shape({
 export const Register = () => {
   const { newUser, user, loading, setLoading } = useLoginContext();
   const navigate = useNavigate();
-  
+  const [inputPassword, setInputPassword] = useState("password");
+
   useEffect(() => {
     user.stateLogged && navigate("/products");
   }, [user]);
-  
-   const MySwal = withReactContent(Swal);
-   const alertRegister = () => {
-     MySwal.fire({
-       title: <strong>Usuario registrado</strong>,
-       html: (
-         <i>
-           <p>Se registro un nuevo usuario. Puede iniciar sesión desde el login.</p>
-         </i>
-       ),
-       icon: "success",
-     });
-   };
-  
+
+  const MySwal = withReactContent(Swal);
+  const alertRegister = () => {
+    MySwal.fire({
+      title: <strong>Usuario registrado</strong>,
+      html: (
+        <i>
+          <p>
+            Se registro un nuevo usuario. Puede iniciar sesión desde el login.
+          </p>
+        </i>
+      ),
+      icon: "success",
+    });
+  };
+
   return (
     <div className="register">
       <Formik
@@ -71,15 +75,19 @@ export const Register = () => {
 
             <div className="inputContainer">
               <label htmlFor="password">Contraseña:</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                value={values.password}
-                onChange={handleChange}
-                placeholder="Ingresá una contraseña"
-                className="form-control"
-              />
+              <div className="input-group">
+                <input
+                  type={inputPassword}
+                  name="password"
+                  id="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  placeholder="Ingresá una contraseña"
+                  className="form-control"
+                />
+                <BtnShowPassword setInputPassword={setInputPassword} />
+              </div>
+
               {errors.password && (
                 <p className="text-danger">{errors.password}</p>
               )}

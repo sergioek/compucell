@@ -3,6 +3,7 @@
     @include flex(column, center, center, 0rem);
     background-color: $gray-ligth;
     border-radius: 10px;
+
     img {
         width: 13.5rem;
         margin-top: 1rem;
@@ -44,6 +45,7 @@
 
 .item:hover {
     box-shadow: 2px 2px 2px 3px $yellow;
+
     button {
         visibility: visible;
     }

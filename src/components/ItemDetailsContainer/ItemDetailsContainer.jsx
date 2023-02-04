@@ -11,7 +11,7 @@ export const ItemDetailsContainer = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const navigate = useNavigate();
-  
+
   const notify = () => {
     toast("Cargando vista del producto", {
       toastId: 2,

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { useLoginContext } from "../Context/LoginContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { BtnShowPassword } from "../BtnShowPassword/BtnShowPassword";
+import { CheckedSavePassword } from "../CheckedSavePassword/CheckedSavePassword";
 
 const validateForm = Yup.object().shape({
   email: Yup.string()
@@ -16,16 +17,27 @@ const validateForm = Yup.object().shape({
 export const Login = () => {
   const { user, loading, setLoading, login } = useLoginContext();
   const navigate = useNavigate();
+  const [inputPassword, setInputPassword] = useState("password");
+  const [email, setEmail] = useState(
+    JSON.parse(localStorage.getItem("emailCompucell")) || ""
+  );
+  const [password, setPassword] = useState(
+    JSON.parse(localStorage.getItem("passwordCompucell")) || ""
+  );
+
+  const [checked, setChecked] = useState(
+    JSON.parse(localStorage.getItem("checkedCompucell")) || false
+  );
 
   useEffect(() => {
-    user.stateLogged && navigate('/products');
-  },[user])
+    user.stateLogged && navigate("/products");
+  }, [user]);
   return (
     <div className="login">
       <Formik
         initialValues={{
-          email: "",
-          password: "",
+          email: email,
+          password: password,
         }}
         validationSchema={validateForm}
         onSubmit={(event, { resetForm }) => {
@@ -56,24 +68,38 @@ export const Login = () => {
 
             <div className="inputContainer">
               <label htmlFor="password">Contraseña:</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                value={values.password}
-                onChange={handleChange}
-                placeholder="Ingresá tu contraseña"
-                className="form-control"
-              />
+              <div className="input-group">
+                <input
+                  type={inputPassword}
+                  name="password"
+                  id="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  placeholder="Ingresá tu contraseña"
+                  className="form-control"
+                />
+                <BtnShowPassword setInputPassword={setInputPassword} />
+              </div>
+
               {errors.password && (
                 <p className="text-danger">{errors.password}</p>
               )}
             </div>
 
+            <CheckedSavePassword
+              values={values}
+              checked={checked}
+              setEmail={setEmail}
+              setPassword={setPassword}
+              setChecked={setChecked}
+            />
+
             <div>
               {user.error &&
                 (user.error == "Firebase: Error (auth/wrong-password)." ? (
-                  <p className="text-danger mt-2">El email y contraseñas no son correctos.</p>
+                  <p className="text-danger mt-2">
+                    El email y contraseñas no son correctos.
+                  </p>
                 ) : (
                   <p className="text-danger mt-2">{user.error}</p>
                 ))}

@@ -1,6 +1,6 @@
 .titleList {
     height: 4rem;
-    @include flex(row,center,center,0rem);
+    @include flex(row, center, center, 0rem);
     margin: 2rem;
     background-color: $green;
     color: $white;

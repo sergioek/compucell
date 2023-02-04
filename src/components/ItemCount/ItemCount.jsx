@@ -1,8 +1,6 @@
-
-export const ItemCount = ({ stock,count,setCount }) => {
-
+export const ItemCount = ({ stock, count, setCount }) => {
   const decrementCount = () => {
-    count > 1 && setCount(count- 1);
+    count > 1 && setCount(count - 1);
   };
 
   const incrementCount = () => {
