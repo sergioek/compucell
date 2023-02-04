@@ -21,6 +21,7 @@ Este proyecto se construyo con React JS, bajo la herramienta Vite.js. Estas tecn
 * [SWEETALERT2](https://sweetalert2.github.io/): Version 11.7.2
 * [REACT ROUTER DOM](https://reactrouter.com/en/main): Version 6.8.0
 * [TOASTIFY](https://www.npmjs.com/package/toastify-js): Version 1.12.0
+* [FIREBASE](https://firebase.google.com/?hl=es):
 
 
 ## Netlify
